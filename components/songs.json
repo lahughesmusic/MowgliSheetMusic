@@ -1,7 +1,5 @@
 {
-    "Songs": [
-        "Amazing Grace",
-        "What A Friend",
-        "Seek Ye First"
-    ]
+    "As the Deer": {
+        "path": "assets/hymns/AsTheDeer"
+    }
 }

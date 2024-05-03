@@ -5,7 +5,7 @@ import filter from "lodash.filter";
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Next from './Next';
-import DATA from './Data'
+import DATA from './Data1'
 const songs = require("./songs.json");
 
 
@@ -29,7 +29,7 @@ const ItemSeparatorView = () => {
 
 //PRINTING OUT ASSOCIATED VERSES, YOU WILL NEED THIS LATER
 function matchTopic(songHymns) {
-    console.log(songs[songHymns])
+    console.log(DATA[songHymns])
 }
 
 
@@ -44,7 +44,7 @@ class Search extends Component {
             error: null,
             searchValue: "",
             selected: false,
-            songs: ""
+            hymns: ""
         };
         this.arrayholder = DATA;
     }
@@ -68,9 +68,9 @@ class Search extends Component {
             songHymns = item.title
             matchTopic(songHymns)
             this.state.selected = true;
-            this.state.verses = songHymns;
+            this.state.hymns = songHymns;
             console.log(this.state.selected)
-            navigation.navigate('Songs', { songs: this.state.songs })
+            navigation.navigate('Hymns', { hymns: this.state.hymns })
         };
         //THIS IS WHAT RENDERS THE FLATLIST
         const renderItem = ({ item }) =>
@@ -80,7 +80,6 @@ class Search extends Component {
                     {item.title.toUpperCase()}
                 </Text>
             </TouchableOpacity>
-
 
         return (
             <View style={styles.container}>
@@ -99,8 +98,6 @@ class Search extends Component {
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id}
                     ItemSeparatorComponent={ItemSeparatorView}
-
-
                 />
             </View>
         );

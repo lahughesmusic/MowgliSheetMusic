@@ -1,6 +1,6 @@
 import { ImageBackground, StyleSheet, View } from 'react-native';
-import image from '../assets/images/crownOfThorns.png';
-import Search from './SearchField';
+import image from '../assets/image.jpg';
+import Search from './Search';
 
 
 export default function Home({ navigation }) {
