@@ -37,7 +37,7 @@ function App() {
             backgroundColor: '#675B5B'
           }
         }} />
-        <Tab.Screen name="Songs" component={Next} options={{
+        <Tab.Screen name="Hymns" component={Next} options={{
           title: '', headerStyle: {
             backgroundColor: 'black'
           }

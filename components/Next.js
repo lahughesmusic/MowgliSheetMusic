@@ -2,7 +2,7 @@ import { StyleSheet, Text, TextView, TextInput, View, ScrollView } from 'react-n
 const hymns = require("./songs.json");
 import { ImageBackground } from 'react-native';
 import image from '../assets/image.jpg';
-import Pdf from 'react-native-pdf';
+// import Pdf from 'react-native-pdf';
 
 
 
@@ -15,7 +15,7 @@ export default function Next({ route, navigation }) {
         <View style={{ marginLeft: 30 }}>
             <Text style={{ marginLeft: 30, flex: 1, fontWeight: 'bold', color: 'white', fontSize: 15, width: 250, textShadowRadius: 10, textShadowColor: 'black' }} key={song}>{song}</Text>
             <Text style={{ color: 'lightgrey' }}>_____________________</Text>
-            <Pdf
+            {/* <Pdf
                 source={{}}
                 onLoadComplete={(numberOfPages, filePath) => {
                     console.log(`number of pages: ${numberOfPages}`);
@@ -26,7 +26,7 @@ export default function Next({ route, navigation }) {
                 onError={(error) => {
                     console.log(error);
                 }}
-            />
+            /> */}
         </View>
     )
     return (

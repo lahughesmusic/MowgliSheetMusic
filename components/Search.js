@@ -61,16 +61,16 @@ class Search extends Component {
     render() {
         const { navigation } = this.props;
 
-        // GET NAME OF SELECTED TOPIC
+        // GET PATH OF SELECTED HYMN
         let songHymns = []
         const getItem = (item) => {
-            console.log(item.title);
+            console.log(item.path);
             songHymns = item.title
             matchTopic(songHymns)
             this.state.selected = true;
             this.state.hymns = songHymns;
             console.log(this.state.selected)
-            navigation.navigate('Hymns', { hymns: this.state.hymns })
+            navigation.navigate('Hymns', { hymns: this.state.hymns.path })
         };
         //THIS IS WHAT RENDERS THE FLATLIST
         const renderItem = ({ item }) =>
