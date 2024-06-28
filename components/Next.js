@@ -1,37 +1,47 @@
-import React, { useState } from 'react';
-import { StyleSheet, ImageBackground, Image, Text, View, ScrollView, Button } from 'react-native';
+import React from 'react';
+import { StyleSheet, ImageBackground, View, ScrollView, Dimensions } from 'react-native';
 import songEntries from './Data1';
 
 export default function Next({ route, navigation }) {
-
     const songTitle = route.params.hymns;
 
-    function getPathByTitle(title) {
+    function getImagesByTitle(title) {
         const entry = songEntries.find(song => song.title === title);
-        return entry ? entry.path : null;
-
+        return entry ? entry.images : [];
     }
 
-
-    // Usage example
-    const title = songTitle;
-    const path = getPathByTitle(title);
-    console.log('+++' + path);
+    const images = getImagesByTitle(songTitle);
 
     return (
-        <View>
-            <ImageBackground source={path} resizeMode='cover' style={{ width: '100%', height: '100%' }}>
-            </ImageBackground>
-        </View >
+        <ScrollView style={styles.container} contentContainerStyle={styles.scrollViewContent}>
+            {images.map((image, index) => (
+                <ImageBackground key={index} source={image} style={styles.imageBackground} resizeMode='stretch'>
+                    {/* Add other components like text or buttons here if needed */}
+                </ImageBackground>
+            ))}
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
-    cardContainer: {
-        flexDirection: 'column',
-        justifyContent: 'center',
+    container: {
         flex: 1,
-        padding: 50,
-        width: "100%",
+        padding: 0, // Ensure no padding in the container
+        margin: 0, // Ensure no margin in the container
+    },
+    scrollViewContent: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: 0, // Ensure no padding in the scroll view content
+        margin: 0, // Ensure no margin in the scroll view content
+    },
+    imageBackground: {
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 0, // Ensure no padding in the image background
+        margin: 0, // Ensure no margin in the image background
     },
 });
+
