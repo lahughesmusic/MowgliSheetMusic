@@ -1,19 +1,11 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
-import { ListItem, SearchBar } from "react-native-elements";
-import filter from "lodash.filter";
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Next from './Next';
-import DATA from './Data1'
-const songs = require("./songs.json");
+import { SearchBar } from "react-native-elements";
+import { useNavigation } from '@react-navigation/native';
+import songEntries from './Data1';
 
-
-
-//VISUALLY SEPARATES TOPICS
 const ItemSeparatorView = () => {
     return (
-        // Flat List Item Separator
         <View
             style={{
                 height: 0.5,
@@ -24,62 +16,37 @@ const ItemSeparatorView = () => {
     );
 };
 
-//IF YOU NEED EASY LIST OF TOPICS
-// const topicArray = Object.keys(topics)
-
-//PRINTING OUT ASSOCIATED VERSES, YOU WILL NEED THIS LATER
-function matchTopic(songHymns) {
-    console.log(DATA[songHymns])
-}
-
-
-
-// ACTUAL SEARCH COMPONENT
 class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: false,
-            data: DATA,
-            error: null,
+            songEntries: songEntries,
             searchValue: "",
-            selected: false,
-            hymns: ""
         };
-        this.arrayholder = DATA;
+        this.arrayholder = songEntries;
     }
-    //SEARCH BAR FUNCTIONALITY
+
     searchFunction = (text) => {
         const updatedData = this.arrayholder.filter((item) => {
-            const item_data = `${item.title.toUpperCase()})`;
+            const item_data = `${item.title.toUpperCase()}`;
             const text_data = text.toUpperCase();
             return item_data.indexOf(text_data) > -1;
         });
-        this.setState({ data: updatedData, searchValue: text });
+        this.setState({ songEntries: updatedData, searchValue: text });
     };
 
     render() {
         const { navigation } = this.props;
 
-        // GET PATH OF SELECTED HYMN
-        let songHymns = []
         const getItem = (item) => {
-            console.log(item.path);
-            songHymns = item.title
-            matchTopic(songHymns)
-            this.state.selected = true;
-            this.state.hymns = songHymns;
-            console.log(this.state.selected)
-            navigation.navigate('Hymns', { hymns: this.state.hymns.path })
+            navigation.navigate('Next', { hymns: item.title });
         };
-        //THIS IS WHAT RENDERS THE FLATLIST
-        const renderItem = ({ item }) =>
-            <TouchableOpacity
-                onPress={() => getItem(item)}>
-                <Text style={styles.item}>
-                    {item.title.toUpperCase()}
-                </Text>
+
+        const renderItem = ({ item }) => (
+            <TouchableOpacity onPress={() => getItem(item)}>
+                <Text style={styles.item}>{item.title.toUpperCase()}</Text>
             </TouchableOpacity>
+        );
 
         return (
             <View style={styles.container}>
@@ -93,8 +60,7 @@ class Search extends Component {
                     keyboardType={'ascii-capable'}
                 />
                 <FlatList
-                    style={styles.item}
-                    data={this.state.data}
+                    data={this.state.songEntries}
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id}
                     ItemSeparatorComponent={ItemSeparatorView}
@@ -108,7 +74,6 @@ export default function (props) {
     const navigation = useNavigation();
     return <Search {...props} navigation={navigation} />
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -128,7 +93,5 @@ const styles = StyleSheet.create({
         textShadowRadius: 10,
         textShadowColor: 'black',
         fontSize: 17,
-
     },
-
 });

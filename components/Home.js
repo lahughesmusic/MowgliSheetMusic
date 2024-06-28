@@ -1,20 +1,15 @@
+import React from 'react';
 import { ImageBackground, StyleSheet, View } from 'react-native';
 import image from '../assets/image.jpg';
 import Search from './Search';
 
-
 export default function Home({ navigation }) {
-
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <ImageBackground source={image} resizeMode='cover' style={{ width: '100%', height: '100%' }}>
-
-                <Search></Search>
-
-
+                <Search />
             </ImageBackground>
         </View>
-
     );
 }
 
@@ -32,12 +27,10 @@ const styles = StyleSheet.create({
         color: '#a7d8de',
         fontFamily: 'Didot',
         fontWeight: 'bold',
-        fontSize: 30
     },
     view: {
         marginTop: '10%',
     },
-
     container: {
         display: 'inline-block',
         position: 'relative',
@@ -45,7 +38,5 @@ const styles = StyleSheet.create({
         paddingBottom: '100%',
         verticalAlign: 'middle',
         overflow: 'hidden',
-    }
-
+    },
 });
-
