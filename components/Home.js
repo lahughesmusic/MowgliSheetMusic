@@ -12,31 +12,3 @@ export default function Home({ navigation }) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    pressable: {
-        marginTop: '10%',
-        width: '100%',
-        height: 40,
-        alignSelf: 'center',
-        borderRadius: 9,
-    },
-    text: {
-        fontSize: 25,
-        textAlign: 'center',
-        color: '#a7d8de',
-        fontFamily: 'Didot',
-        fontWeight: 'bold',
-    },
-    view: {
-        marginTop: '10%',
-    },
-    container: {
-        display: 'inline-block',
-        position: 'relative',
-        width: '100%',
-        paddingBottom: '100%',
-        verticalAlign: 'middle',
-        overflow: 'hidden',
-    },
-});

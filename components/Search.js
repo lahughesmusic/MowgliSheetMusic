@@ -4,6 +4,25 @@ import { SearchBar } from "react-native-elements";
 import { useNavigation } from '@react-navigation/native';
 import songEntries from './Data1';
 
+
+
+function sortAndReassignIds(entries) {
+    // Sort the entries alphabetically by title
+    entries.sort((a, b) => a.title.localeCompare(b.title));
+
+    // Reassign the ids in ascending order
+    entries.forEach((entry, index) => {
+        entry.id = (index + 1).toString();
+    });
+
+    return entries;
+}
+
+const sortedSongEntries = sortAndReassignIds(songEntries);
+
+
+
+
 const ItemSeparatorView = () => {
     return (
         <View
@@ -20,7 +39,7 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            songEntries: songEntries,
+            songEntries: sortedSongEntries,
             searchValue: "",
         };
         this.arrayholder = songEntries;
@@ -80,18 +99,16 @@ const styles = StyleSheet.create({
         marginTop: 30,
         padding: 2,
         textAlign: 'center',
-        backgroundColor: 'hsla(14, 6%, 1%, 0.40)',
+        backgroundColor: 'hsla(14, 90%, 10%, 0.40)',
     },
     item: {
-        backgroundColor: 'hsla(14, 6%, 1%, 0.40)',
+        backgroundColor: 'hsla(19, 1%, 50%, 0.40)',
         marginVertical: 8,
-        marginHorizontal: 16,
-        fontSize: 15,
-        borderRadius: 9,
+        marginHorizontal: 100,
         textAlign: 'center',
         color: 'white',
-        textShadowRadius: 10,
+        textShadowRadius: 50,
         textShadowColor: 'black',
-        fontSize: 17,
+        fontSize: 18,
     },
 });
