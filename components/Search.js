@@ -1,48 +1,41 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
 import { SearchBar } from "react-native-elements";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import songEntries from './Data1';
 
-
-
 function sortAndReassignIds(entries) {
-    // Sort the entries alphabetically by title
     entries.sort((a, b) => a.title.localeCompare(b.title));
-
-    // Reassign the ids in ascending order
     entries.forEach((entry, index) => {
         entry.id = (index + 1).toString();
     });
-
     return entries;
 }
 
 const sortedSongEntries = sortAndReassignIds(songEntries);
 
-
-
-
-const ItemSeparatorView = () => {
-    return (
-        <View
-            style={{
-                height: 0.5,
-                width: '95%',
-                backgroundColor: 'black',
-            }}
-        />
-    );
-};
+const ItemSeparatorView = () => (
+    <View style={{ height: 0.5, width: '95%', backgroundColor: 'black' }} />
+);
 
 class Search extends Component {
     constructor(props) {
         super(props);
+
+        const category = props.route?.params?.category;
+        console.log("Category received from FilterScreen:", category);
+
+
+        const filtered = category
+            ? sortedSongEntries.filter((s) => s.category === category)
+            : sortedSongEntries;
+
         this.state = {
-            songEntries: sortedSongEntries,
+            songEntries: filtered,
             searchValue: "",
         };
-        this.arrayholder = songEntries;
+
+        this.arrayholder = filtered;
     }
 
     searchFunction = (text) => {
@@ -54,16 +47,19 @@ class Search extends Component {
         this.setState({ songEntries: updatedData, searchValue: text });
     };
 
+
+
     render() {
         const { navigation } = this.props;
 
         const getItem = (item) => {
-            navigation.navigate('Next', { Songs: item.title });
+            navigation.navigate('Next', { Songs: item.title, category: item.category }); // Add category
         };
 
         const renderItem = ({ item }) => (
             <TouchableOpacity onPress={() => getItem(item)}>
                 <Text style={styles.item}>{item.title.toUpperCase()}</Text>
+                <Text style={styles.itemSubtitle}>{item.category}</Text>
             </TouchableOpacity>
         );
 
@@ -91,7 +87,8 @@ class Search extends Component {
 
 export default function (props) {
     const navigation = useNavigation();
-    return <Search {...props} navigation={navigation} />
+    const route = useRoute(); // ✅ This gives you access to route.params
+    return <Search {...props} navigation={navigation} route={route} />;
 }
 
 const styles = StyleSheet.create({
@@ -102,13 +99,24 @@ const styles = StyleSheet.create({
         backgroundColor: 'hsla(14, 90%, 10%, 0.40)',
     },
     item: {
-        backgroundColor: 'hsla(19, 1%, 50%, 0.40)',
-        marginVertical: 8,
-        marginHorizontal: 100,
         textAlign: 'center',
         color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
         textShadowRadius: 50,
         textShadowColor: 'black',
-        fontSize: 18,
+        textShadowColor: 'black',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 1,
+    },
+    itemSubtitle: {
+        textAlign: 'center',
+        color: '#ddd',
+        fontSize: 16,
+        marginTop: 4,
+        textShadowColor: 'black',
+        textShadowColor: 'black',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 1,
     },
 });

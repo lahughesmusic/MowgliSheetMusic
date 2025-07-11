@@ -3,20 +3,20 @@ import { StyleSheet, ImageBackground, View, ScrollView, Dimensions } from 'react
 import songEntries from './Data1';
 
 export default function SheetMusic({ route, navigation }) {
-    const songTitle = route.params.hymns;
+    const songTitle = route.params.Songs;
+    const category = route.params.category;
 
-    function getImagesByTitle(title) {
-        const entry = songEntries.find(song => song.title === title);
+    function getImagesByTitle(title, category) {
+        const entry = songEntries.find(song => song.title === title && song.category === category);
         return entry ? entry.path : [];
     }
 
-    const images = getImagesByTitle(songTitle);
+    const images = getImagesByTitle(songTitle, category);
 
     return (
         <ScrollView style={styles.container} contentContainerStyle={styles.scrollViewContent}>
             {images.map((image, index) => (
-                <ImageBackground key={index} source={image} style={styles.imageBackground} resizeMode='stretch'>
-                </ImageBackground>
+                <ImageBackground key={index} source={image} style={styles.imageBackground} resizeMode='stretch' />
             ))}
         </ScrollView>
     );
@@ -39,7 +39,5 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').height,
         justifyContent: 'center',
         alignItems: 'center',
-
     },
 });
-
