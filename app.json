@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "MowgliSheetMusic",
-    "slug": "MowgliSheetMusic",
-    "version": "2.0.5",
+    "name": "Sheet Music For Kids",
+    "slug": "SheetMusicForKids",
+    "version": "1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "assetBundlePatterns": [
@@ -10,16 +10,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.musicaldev.MowgliSheetMusic"
+      "bundleIdentifier": "com.musicaldev.SheetMusicForKids"
     },
     "android": {
-      "package": "com.musicaldev.MowgliSheetMusic"
+      "package": "com.musicaldev.SheetMusicForKids"
     },
-    "web": {},
-    "extra": {
-      "eas": {
-        "projectId": "0bada4a5-9de3-4b2d-88c6-ed5c03deaac4"
-      }
-    }
+    "web": {}
   }
 }
