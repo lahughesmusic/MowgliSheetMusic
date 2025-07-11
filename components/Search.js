@@ -58,7 +58,7 @@ class Search extends Component {
         const { navigation } = this.props;
 
         const getItem = (item) => {
-            navigation.navigate('Next', { hymns: item.title });
+            navigation.navigate('Next', { Songs: item.title });
         };
 
         const renderItem = ({ item }) => (

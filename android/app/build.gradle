@@ -109,9 +109,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.musicaldev.MowgliSheetMusic'
+    namespace 'com.musicaldev.SheetMusicForKids'
     defaultConfig {
-        applicationId 'com.musicaldev.MowgliSheetMusic'
+        applicationId 'com.musicaldev.SheetMusicForKids'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

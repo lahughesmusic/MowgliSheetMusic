@@ -1,75 +1,64 @@
 const songEntries = [
   {
     id: "1",
-    title: "Abide With Me",
-    category: "hymn",
+    title: "Colors All Around",
+    Level: "1h",
     path: [
-      require('../assets/hymns/AbideWithMe.jpg')
+      '../assets/Songs/Colors_All_Around_1h.pdf'
     ],
   },
   {
     id: "2",
-    title: "All Creatures Of Our God And King",
-    category: "hymn",
+    title: "Twinkle Twinkle Little Star",
+    Level: "mid",
     path: [
-      require('../assets/hymns/AllCreaturesOfOurGodAndKing.jpg')
+      '../assets/Songs/TwinkleTwinkle Little_Start_mid.pdf'
     ],
   },
 
   {
     id: "3",
-    title: "All Glory Laud And Honor",
-    category: "hymn",
+    title: "ABC Hop",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/AllGloryLaudAndHonor.jpg')
+      '../assets/Songs/ABC_Hop_1h8.pdf'
     ],
   },
 
 
   {
     id: "6",
-    title: "Blessed Assurance",
-    category: "hymn",
+    title: "ABC Hop",
+    Level: "C8",
     path: [
-      require('../assets/hymns/BlessedAssurance-0.jpg'),
-      require('../assets/hymns/BlessedAssurance-1.jpg'),
+      '../assets/Songs/ABC_Hope_C8.pdf'
     ],
   },
 
 
   {
     id: "8",
-    title: "Holy Holy Holy",
-    category: "hymn",
+    title: "Alphabet Parade",
+    Level: "1h",
     path: [
-      require('../assets/hymns/HolyHolyHoly-0.jpg'),
-      require('../assets/hymns/HolyHolyHoly-1.jpg'),
+      '../assets/Songs/Alphabet_Parade_1h.pdf'
     ],
   },
   {
     id: "9",
     title: "Jesus Loves Me",
-    category: "hymn",
+    Level: "C",
     path: [
-      require('../assets/hymns/JesusLovesMe-0.jpg'),
-      require('../assets/hymns/JesusLovesMe-1.jpg'),
+      '../assets/Songs/Alphabet_Parade_C.pdf'
     ],
   },
-  {
-    id: "10",
-    title: "Just As I Am",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/JustAsIAm.jpg'),
-    ],
-  },
+
   {
     id: "12",
-    title: "Nearer My God To Thee",
-    category: "hymn",
+    title: "Alphabet Song",
+    Level: "C",
     path: [
-      require('../assets/hymns/NearerMyGodToThee-0.jpg'),
-      require('../assets/hymns/NearerMyGodToThee-1.jpg'),
+      '../assets/Songs/Alphabet_Parade_C.pdf'
     ],
   },
 
@@ -78,387 +67,400 @@ const songEntries = [
 
   {
     id: "29",
-    title: "Praise To The Lord Almighty",
-    category: "hymn",
+    title: "Astronaut Bounce",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/PraiseToTheLordAlmighty.jpg'),
+      '../assets/Songs/Astronaut_Bounce_1h8.pdf'
     ],
   },
   {
     id: "30",
-    title: "To God Be The Glory",
-    category: "hymn",
+    title: "Astronaut Bounce",
+    Level: "C",
     path: [
-      require('../assets/hymns/ToGodBeTheGlory-0.jpg'),
-      require('../assets/hymns/ToGodBeTheGlory-1.jpg'),
+      '../assets/Songs/Astronaut_Bounce_C.pdf'
     ],
   },
 
 
   {
     id: "32",
-    title: "All People That on Earth Do Dwell",
-    category: "hymn",
+    title: "Astronaut Bounce",
+    Level: "C8",
     path: [
-      require('../assets/hymns/AllPeopleThatOnEarthDoDwell.jpg')
+      '../assets/Songs/Astronaut_Bounce_c8.pdf'
     ],
   },
 
   {
     id: "33",
-    title: "All Things Bright And Beautiful",
-    category: "hymn",
+    title: "Banana Pearls",
+    Level: "C8",
     path: [
-      require('../assets/hymns/AllThingsBrightAndBeautiful-0.jpg'),
-      require('../assets/hymns/AllThingsBrightAndBeautiful-1.jpg'),
+      '../assets/Songs/Astronaut_Bounce_c8.pdf'
     ],
   },
   {
     id: "34",
-    title: "A Mighty Fortress Is Our God",
-    category: "hymn",
+    title: "Bark Bark Wolf",
+    Level: "C",
     path: [
-      require('../assets/hymns/AMightyFortressIsOurGod.jpg')
+      '../assets/Songs/Bark_Bark_Wolf_C.pdf'
 
     ],
   },
   {
     id: "35",
-    title: "Angels From The Realms of Glory",
-    category: "hymn",
+    title: "Brush Your Teeth",
+    Level: "C",
     path: [
-      require('../assets/hymns/AngelsFromTheRealmsOfGlory.jpg')
+      '../assets/Songs/Brush_Your_Teeth_C.pdf'
 
     ],
   },
   {
     id: "36",
-    title: "Angels We Have Heard On High",
-    category: "hymn",
+    title: "Be My Buddy",
+    Level: "mid",
     path: [
-      require('../assets/hymns/AngelsWeHaveHeardOnHigh-0.jpg'),
-      require('../assets/hymns/AngelsWeHaveHeardOnHigh-1.jpg'),
-      require('../assets/hymns/AngelsWeHaveHeardOnHigh-2.jpg'),
+      '../assets/Songs/Be_My_Buddy_mid.pdf'
 
     ],
   },
   {
     id: "37",
-    title: "Are You Washed In The Blood",
-    category: "hymn",
+    title: "Bubble Party",
+    Level: "1h",
     path: [
-      require('../assets/hymns/AreYouWashedInTheBlood-0.jpg'),
-      require('../assets/hymns/AreYouWashedInTheBlood-1.jpg')
+      '../assets/Songs/Bubble_Party_1h.pdf'
 
     ],
   },
   {
     id: "46",
-    title: "Children Of The Heavenly Father",
-    category: "hymn",
+    title: "Bubble Party",
+    Level: "C8",
     path: [
-      require('../assets/hymns/ChildrenOfTheHeavenlyFather.jpg')
+      '../assets/Songs/Bubble_Party_C8.pdf'
     ],
   },
   {
     id: "47",
-    title: "Come Thou Fount",
-    category: "hymn",
+    title: "Bumblebee Bumblebee",
+    Level: "C8",
     path: [
-      require('../assets/hymns/ComeThouFount-0.jpg'),
-      require('../assets/hymns/ComeThouFount-1.jpg')
+      '../assets/Songs/Bumblebee_Bumblebee_C8.pdf'
     ],
   },
   {
     id: "48",
-    title: "Come Thou Long Expected Jesus",
-    category: "hymn",
+    title: "Bumblebee Bumblebee",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/ComeThouLongExpectedJesus-0.jpg'),
-      require('../assets/hymns/ComeThouLongExpectedJesus-1.jpg')
+      '../assets/Songs/Bumblebee_Bumblebee_1h8.pdf'
     ],
   },
   {
     id: "49",
-    title: "Come Ye Disconsolate",
-    category: "hymn",
+    title: "Clap Your Hands",
+    Level: "1h",
     path: [
-      require('../assets/hymns/ComeYeDisconsolate.jpg')
+      '../assets/Songs/Clap_Your_Hands_1h.pdf'
+
+    ],
+  },
+  {
+    id: "49",
+    title: "Clap Your Hands",
+    Level: "1h8",
+    path: [
+      '../assets/Songs/Clap_Your_Hands_1h8.pdf'
+
+    ],
+  },
+  {
+    id: "49",
+    title: "Clap Your Hands",
+    Level: "C",
+    path: [
+      '../assets/Songs/Clap_Your_Hands_C.pdf'
 
     ],
   },
 
+
   {
     id: "52",
-    title: "Eternal Father Strong To Save",
-    category: "hymn",
+    title: "Clap Your Hands",
+    Level: "C8",
     path: [
-      require('../assets/hymns/EternalFatherStrongToSave.jpg')
+      '../assets/Songs/Clap_Your_Hands_C8.pdf'
 
 
     ],
   },
   {
     id: "53",
-    title: "For The Beauty Of The Earth",
-    category: "hymn",
+    title: "Clean Up Crew",
+    Level: "1h",
     path: [
-      require('../assets/hymns/ForTheBeautyOfTheEarth-0.jpg'),
-      require('../assets/hymns/ForTheBeautyOfTheEarth-1.jpg')
+      '../assets/Songs/Clean_Up_Crew_1h.pdf'
     ],
   },
   {
     id: "54",
-    title: "From All That Dwell Below The Skies",
-    category: "hymn",
+    title: "Clean Up Crew",
+    Level: "C",
     path: [
-      require('../assets/hymns/FromAllThatDwellBelowTheSkies.jpg')
+      '../assets/Songs/Clean_Up_Crew_C.pdf'
     ],
   },
   {
     id: "65",
-    title: "Hark The Herald Angels Sing",
-    category: "hymn",
+    title: "Colors All Around",
+    Level: "C",
     path: [
-      require('../assets/hymns/HarkTheHeraldAngelsSing-0.jpg'),
-      require('../assets/hymns/HarkTheHeraldAngelsSing-1.jpg')
+      '../assets/Songs/Colors_All_Around_C.pdf'
+
     ],
   },
 
   {
     id: "72",
-    title: "Hosanna Loud Hosanna",
-    category: "hymn",
+    title: "Count To Ten",
+    Level: "1h",
     path: [
-      require('../assets/hymns/HosannaLoudHosanna.jpg')
+      '../assets/Songs/Count_To_Ten_1h.pdf'
     ],
   },
 
 
   {
     id: "75",
-    title: "I Heard The Bells On Christmas Day",
-    category: "hymn",
+    title: "Count To Ten",
+    Level: "C",
     path: [
-      require('../assets/hymns/IHeardTheBellsOnChristmasDay.jpg')
+      '../assets/Songs/Count_To_Ten_C.pdf'
     ],
   },
 
   {
     id: "77",
-    title: "I'll Praise My Maker",
-    category: "hymn",
+    title: "Dance and Freeze!",
+    Level: "1h",
     path: [
-      require('../assets/hymns/IllPraiseMyMakjer.jpg')
+      '../assets/Songs/Dance_And_Freeze_1h.pdf'
     ],
   },
   {
     id: "78",
-    title: "Immortal Invisible God Only Wise",
-    category: "hymn",
+    title: "Dance And Freeze",
+    Level: "C8",
     path: [
-      require('../assets/hymns/ImmortalInvisibleGodOnlyWise.jpg')
+      '../assets/Songs/Dance_And_Freeze_C8.pdf'
     ],
   },
   {
     id: "79",
-    title: "Infant Holy Infant Lowly",
-    category: "hymn",
+    title: "Dinosaur Stomp",
+    Level: "mid",
     path: [
-      require('../assets/hymns/InfantHolyInfantLowly.jpg')
+      '../assets/Songs/Dinosaur_Stomp_mid.pdf'
     ],
   },
 
   {
     id: "82",
-    title: "I Sing The Mighty Power Of God",
-    category: "hymn",
+    title: "Dreamland Train",
+    Level: "C",
     path: [
-      require('../assets/hymns/ISingTheMightyPowerOfGod-0.jpg'),
-      require('../assets/hymns/ISingTheMightyPowerOfGod-1.jpg')
+      '../assets/Songs/Dreamland_Train_C.pdf'
     ],
   },
   {
     id: "838",
-    title: "It Came Upon The Midnight Clear",
-    category: "hymn",
+    title: "Elephant Walk",
+    Level: "C",
     path: [
-      require('../assets/hymns/ItCameUponTheMidnightClear-0.jpg'),
-      require('../assets/hymns/ItCameUponTheMidnightClear-1.jpg')
+      '../assets/Songs/Elephant_Walk_C.pdf'
     ],
   },
 
   {
     id: "86",
-    title: "Joy To The World",
-    category: "hymn",
+    title: "Fairy Flight",
+    Level: "mid",
     path: [
-      require('../assets/hymns/JoyToTheWorld-0.jpg'),
-      require('../assets/hymns/JoyToTheWorld-1.jpg'),
-      require('../assets/hymns/JoyToTheWorld-2.jpg')
+      '../assets/Songs/Fairy_Flight_mid.pdf'
     ],
   },
 
   {
     id: "88",
-    title: "Let All The World In Every Corner Sing",
-    category: "hymn",
+    title: "Feeling Rainbow",
+    Level: "1h",
     path: [
-      require('../assets/hymns/LetAllTheWorldInEveryCornerSing.jpg')
+      '../assets/Songs/Feeling_Rainbow_1h.pdf'
     ],
   },
   {
     id: "90",
-    title: "Like A River Glorious",
-    category: "hymn",
+    title: "Feeling Rainbow",
+    Level: "C",
     path: [
-      require('../assets/hymns/LikeARiverGlorious-0.jpg'),
-      require('../assets/hymns/LikeARiverGlorious-1.jpg')
+      '../assets/Songs/Feeling_Rainbow_C.pdf'
     ],
   },
   {
     id: "91",
-    title: "Lo How A Rose E'er Blooming",
-    category: "hymn",
+    title: "Flap Flap Flap You Wings",
+    Level: "C",
     path: [
-      require('../assets/hymns/LoHowARoseEerBlooming.jpg')
+      '../assets/Songs/Flap_Flap_Flap_Your_Wings_C.pdf'
 
     ],
   },
   {
     id: "95",
-    title: "My Shepherd Will Supply My Need",
-    category: "hymn",
+    title: "Gentle Rain",
+    Level: "mid",
     path: [
-      require('../assets/hymns/MyShepherdWillSupplyMyNeed-0.jpg'),
-      require('../assets/hymns/MyShepherdWillSupplyMyNeed-1.jpg'),
-      require('../assets/hymns/MyShepherdWillSupplyMyNeed-2.jpg')
+      '../assets/Songs/Gentle_Rain_mid.pdf'
     ],
   },
 
   {
     id: "96",
-    title: "Nothing But The Blood",
-    category: "hymn",
+    title: "Getting Dressed",
+    Level: "1h",
     path: [
-      require('../assets/hymns/NothingButTheBlood.jpg')
+      '../assets/Songs/Getting_Dressed_1h.pdf'
 
     ],
   },
   {
     id: "97",
     title: "O Come All Ye Faithful",
-    category: "hymn",
+    Level: "C",
     path: [
-      require('../assets/hymns/OComeAllYeFaithful-0.jpg'),
-      require('../assets/hymns/OComeAllYeFaithful-1.jpg')
+      '../assets/Songs/Getting_Dressed_C.pdf'
     ],
   },
   {
     id: "98",
-    title: "O Come O Come Emmanuel",
-    category: "hymn",
+    title: "Giddy Up Pony",
+    Level: "C8",
     path: [
-      require('../assets/hymns/OComeOComeEmmanuel-0.jpg'),
-      require('../assets/hymns/OComeOComeEmmanuel-1.jpg')
+      '../assets/Songs/Giddy_Up_Pony_C8.pdf'
     ],
   },
 
   {
     id: "101",
-    title: "O Little Town Of Bethlehem",
-    category: "hymn",
+    title: "Giggle Train",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/OLittleTownOfBethlehem-0.jpg'),
-      require('../assets/hymns/OLittleTownOfBethlehem-1.jpg')
+      '../assets/Songs/Giggle_Train_mid8.pdf'
     ],
   },
 
 
   {
     id: "104",
-    title: "Oh Sing A Song Of Bethlehem",
-    category: "hymn",
+    title: "Good Morning Sunshine",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/OSingASongOfBethlehem.jpg')
+      '../assets/Songs/Good_Morning_Sunshine_mid8.pdf'
 
     ],
   },
   {
     id: "105",
-    title: "O Sing A Song To God",
-    category: "hymn",
+    title: "Goofy Goose",
+    Level: "1h",
     path: [
-      require('../assets/hymns/OSingASongToGod-0.jpg'),
-      require('../assets/hymns/OSingASongToGod-1.jpg'),
-      require('../assets/hymns/OSingASongToGod-2.jpg')
+      '../assets/Songs/Goofy_Goose_1h.pdf'
     ],
   },
 
   {
 
     id: "112",
-    title: "Rejoice Ye Pure In Heart",
-    category: "hymn",
+    title: "Goodnight Little Star",
+    Level: "mid",
     path: [
-      require('../assets/hymns/RejoiceYePureInHeart.jpg')
+      '../assets/Songs/Goodnight_Little_Star_mid.pdf'
     ],
   },
   {
     id: "113",
-    title: "Savior Like A Shepherd Lead Us",
-    category: "hymn",
+    title: "Goofy Goose",
+    Level: "C",
     path: [
-      require('../assets/hymns/SaviousLikeAShepherdLeadUs-0.jpg'),
-      require('../assets/hymns/SaviousLikeAShepherdLeadUs-1.jpg')
+      '../assets/Songs/Goofy_Goose_C.pdf'
     ],
   },
 
   {
     id: "114",
-    title: "Silent Night",
-    category: "hymn",
+    title: "Hands In The Air",
+    Level: "1h",
     path: [
-      require('../assets/hymns/SilentNight-0.jpg'),
-      require('../assets/hymns/SilentNight-1.jpg')
+      '../assets/Songs/Hands_In_The_Air_1h.pdf'
+    ],
+  },
+  {
+    id: "114",
+    title: "Hands In The Air",
+    Level: "C8",
+    path: [
+      '../assets/Songs/Hands_In_The_Air_C8.pdf'
     ],
   },
   {
     id: "120",
-    title: "The First Noel",
-    category: "hymn",
+    title: "Happy Sad Face",
+    Level: "C8",
     path: [
-      require('../assets/hymns/TheFirstNoel-0.jpg'),
-      require('../assets/hymns/TheFirstNoel-1.jpg')
+      '../assets/Songs/Happy_Sad_Face_C8.pdf'
     ],
   },
 
   {
 
     id: "122",
-    title: "The God Of Abraham Praise",
-    category: "hymn",
+    title: "Hello Song",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/TheGodOfAbrahamPraise.jpg')
+      '../assets/Songs/Hello_Song_1h8.pdf'
+    ],
+  },
+  {
+
+    id: "122",
+    title: "Hello Song",
+    Level: "C8",
+    path: [
+      '../assets/Songs/Hello_Song_C8.pdf'
     ],
   },
   {
 
     id: "123",
-    title: "Thou Didst Leave Thy Throne",
-    category: "hymn",
+    title: "Helping Hands",
+    Level: "mid",
     path: [
-      require('../assets/hymns/ThouDidstLeaveThyThrone.jpg')
+      '../assets/Songs/Helping_Hands_mid.pdf'
     ],
   },
 
   {
     id: "124",
-    title: "We Praise You O God Our Redeemer",
-    category: "hymn",
+    title: "Hop Frog",
+    Level: "mid",
     path: [
-      require('../assets/hymns/WePraiseYouOGodOurRedeemer-0.jpg'),
-      require('../assets/hymns/WePraiseYouOGodOurRedeemer-1.jpg')
+      '../assets/Songs/Hop_Frog_mid.pdf'
+
     ],
   },
 
@@ -466,138 +468,128 @@ const songEntries = [
   {
 
     id: "127",
-    title: "What Child Is This",
-    category: "hymn",
+    title: "Hop, Stop, Go!",
+    Level: "1h",
     path: [
-      require('../assets/hymns/WhatChildIsThis.jpg')
+      '../assets/Songs/Hop_Stop_Go_1h.pdf'
     ],
   },
 
   {
     id: "128",
-    title: "Who Is He In Yonder Stall",
-    category: "hymn",
+    title: "Hop, Stop, Go!",
+    Level: "C",
     path: [
-      require('../assets/hymns/WhoIsHeInYonderStall-0.jpg'),
-      require('../assets/hymns/WhoIsHeInYonderStall-1.jpg')
+      '../assets/Songs/Hop_Stop_Go_C.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Worship The Lord",
-    category: "hymn",
+    title: "Hush Little Bunny",
+    Level: "1h",
     path: [
-      require('../assets/hymns/WorshipTheLord-0.jpg'),
-      require('../assets/hymns/WorshipTheLord-1.jpg')
+      '../assets/Songs/Hush_Little_Bunny_1h.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Hush Little Pony",
+    Level: "C",
+    path: [
+      '../assets/Songs/Hush_Little_Pony_C.pdf'
     ],
   },
   {
     id: "130",
-    title: "Alas And did My Savior Bleed",
-    category: "hymn",
+    title: "I Can Play This",
+    Level: "1h",
     path: [
-      require('../assets/hymns/AlasAndDidMySaviorBleed.jpg')
+      '../assets/Songs/I_Can_Play_This_1h.pdf'
 
     ],
   },
   {
     id: "131",
-    title: "And Can It Be",
-    category: "hymn",
+    title: "I Feel Brave",
+    Level: "1h",
     path: [
-      require('../assets/hymns/AndCanItBe-0.jpg'),
-      require('../assets/hymns/AndCanItBe-1.jpg')
+      '../assets/Songs/I_Feel_Brave_1h.pdf'
     ],
   },
 
 
   {
     id: "131",
-    title: "Christ The Lord Is Risen Today",
-    category: "hymn",
+    title: "I Feel Brave",
+    Level: "C",
     path: [
-      require('../assets/hymns/ChristTheLordIsRisenToday.jpg')
+      '../assets/Songs/I_Feel_Brave_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "Crown Him With Many Crowns",
-    category: "hymn",
+    title: "I Like Me",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/CrownHimWithManyCrowns-0.jpg'),
-      require('../assets/hymns/CrownHimWithManyCrowns-1.jpg')
+      '../assets/Songs/I_Like_Me_mid8.pdf'
+
     ],
   },
   {
     id: "129",
-    title: "Fairest Lord Jesus",
-    category: "hymn",
+    title: "I Lost My Sock",
+    Level: "mid",
     path: [
-      require('../assets/hymns/FairestLordJesus-0.jpg'),
-      require('../assets/hymns/FairestLordJesus-1.jpg')
+      '../assets/Songs/I_Lost_My_Sock_mid.pdf'
     ],
   },
   {
     id: "131",
-    title: "Hail The Day That Sees Him Rise",
-    category: "hymn",
+    title: "I'm A Little Pickle",
+    Level: "1h",
     path: [
-      require('../assets/hymns/HailTheDayThatSeesHimRise.jpg')
-    ],
-  },
-
-
-  {
-    id: "129",
-    title: "At The Name Of Jesus",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/AtTheNameOfJesus.jpg')
+      '../assets/Songs/Im_A_Little_Pickle_1h.pdf'
     ],
   },
   {
     id: "129",
-    title: "Lo He Comes With Clouds Descending",
-    category: "hymn",
+    title: "I'm A Little Pickle",
+    Level: "C",
     path: [
-      require('../assets/hymns/LoHeComesWithCloudsDecending-0.jpg'),
-      require('../assets/hymns/LoHeComesWithCloudsDecending-1.jpg')
+      '../assets/Songs/Im_A_Little_Pickle_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "Love Divine All Loves Excelling",
-    category: "hymn",
+    title: "Jump Like A Frog",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/LoveDivineAllLovesExcelling-0.jpg'),
-      require('../assets/hymns/LoveDivineAllLovesExcelling-1.jpg')
+      '../assets/Songs/Jump_Like_A_Frog_1h8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Majestic Sweetness Sits Enthroned",
-    category: "hymn",
+    title: "Jumping Jellybeans",
+    Level: "mid",
     path: [
-      require('../assets/hymns/MajesticSweetnessSitsEnthroned-0.jpg'),
-      require('../assets/hymns/MajesticSweetnessSitsEnthroned-1.jpg')
-    ],
-  },
-
-  {
-    id: "129",
-    title: "O For A Thousand Tongues To Sing",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/OForAThousandTonguesToSingv2.jpg')
+      '../assets/Songs/Jumping_Jellybeans_mid.pdf'
     ],
   },
   {
     id: "129",
-    title: "O God Almighty Father",
-    category: "hymn",
+    title: "Jungle Safari",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/OGodAlmightyFather.jpg')
+      '../assets/Songs/Jungle_Safari_1h8.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Jungle Safari",
+    Level: "C8",
+    path: [
+      '../assets/Songs/Jungle_Safari_C8.pdf'
     ],
   },
 
@@ -606,10 +598,10 @@ const songEntries = [
 
   {
     id: "129",
-    title: "Rejoice The Lord Is King",
-    category: "hymn",
+    title: "Let's Be Kind",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/RejoiceTheLordIsKing.jpg')
+      '../assets/Songs/Lets_Be_Kind_1h8.pdf'
     ],
   },
 
@@ -617,10 +609,10 @@ const songEntries = [
 
   {
     id: "129",
-    title: "Take My Life And Let It Be Consecrated",
-    category: "hymn",
+    title: "Let's Be Kind",
+    Level: "C8",
     path: [
-      require('../assets/hymns/TakeMyLifeandLetItBeConsecrated.jpg')
+      '../assets/Songs/Lets_Be_Kind_C8.pdf'
 
     ],
   },
@@ -628,74 +620,66 @@ const songEntries = [
   {
     id: "129",
     title: "Tis The Church Triumphant Singing",
-    category: "hymn",
+    Level: "C",
     path: [
-      require('../assets/hymns/TisTheChurchTriumphantSinging-0.jpg'),
-      require('../assets/hymns/TisTheChurchTriumphantSinging-1.jpg')
+      '../assets/Songs/Little_Flower_C.pdf'
+
 
     ],
   },
   {
     id: "129",
-    title: "Tis The Church Triumphant Singing",
-    category: "hymn",
+    title: "Lunch Time Song",
+    Level: "1h",
     path: [
-      require('../assets/hymns/TisTheChurchTriumphantSingingv2-0.jpg'),
-      require('../assets/hymns/TisTheChurchTriumphantSingingv2-1.jpg')
-
-    ],
-  },
-
-  {
-    id: "129",
-    title: "Tis The Church Triumphant Singing",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WhatIfItWereToday-0.jpg'),
-      require('../assets/hymns/WhatIfItWereToday-1.jpg'),
-      require('../assets/hymns/WhatIfItWereToday-2.jpg'),
-      require('../assets/hymns/WhatIfItWereToday-3.jpg')
-
-    ],
-  },
-  {
-    id: "129",
-    title: "When Morning Gilds The Skies",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WhenMorningGildsTheSkies.jpg')
+      '../assets/Songs/Lunchtime_Song_1h.pdf'
 
     ],
   },
 
   {
     id: "129",
-    title: "Amazing Grace",
-    category: "hymn",
+    title: "Lunch Time Song",
+    Level: "C",
     path: [
-      require('../assets/hymns/AmazingGrace-0.jpg'),
-      require('../assets/hymns/AmazingGrace-1.jpg'),
-      require('../assets/hymns/AmazingGrace-2.jpg')
+      '../assets/Songs/Lunchtime_Song_C.pdf'
 
     ],
   },
   {
     id: "129",
-    title: "Beneath The Cross Of Jesus",
-    category: "hymn",
+    title: "Magic Wand Wiggle",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/BeneathTheCrossOfJesus.jpg')
+      '../assets/Songs/Magic_Wand_Wiggle_1h8.pdf'
 
     ],
   },
 
   {
     id: "129",
-    title: "Come Ye Sinners Poor And Needy",
-    category: "hymn",
+    title: "March Of The Penguins",
+    Level: "C8",
     path: [
-      require('../assets/hymns/ComeYeSinnersPoorAndNeedy-0.jpg'),
-      require('../assets/hymns/ComeYeSinnersPoorAndNeedy-1.jpg')
+      '../assets/Songs/March_of_the_Penguins_C8.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "March Of The Penquins",
+    Level: "1h",
+    path: [
+      '../assets/Songs/March_Of_The_Penquins_1h.pdf'
+
+    ],
+  },
+
+  {
+    id: "129",
+    title: "Monster Under My Bed",
+    Level: "1h8",
+    path: [
+      '../assets/Songs/Monster_Under_My_Bed_1h8.pdf'
 
     ],
   },
@@ -703,33 +687,30 @@ const songEntries = [
 
   {
     id: "129",
-    title: "I Am Thine O Lord",
-    category: "hymn",
+    title: "Monster Under My Bed",
+    Level: "C8",
     path: [
-      require('../assets/hymns/IAmThineOLord-0.jpg'),
-      require('../assets/hymns/IAmThineOLord-1.jpg')
+      '../assets/Songs/Monster_Under_My_Bed_C8.pdf'
 
     ],
   },
 
   {
     id: "129",
-    title: "I Hear Thy Welcome Voice",
-    category: "hymn",
+    title: "Moo Cow, Moo",
+    Level: "mid",
     path: [
-      require('../assets/hymns/IHearThyWelcomeVoice-0.jpg'),
-      require('../assets/hymns/IHearThyWelcomeVoice-1.jpg')
-
+      '../assets/Songs/Moo_Cow_Moo_mid.pdf'
     ],
   },
 
 
   {
     id: "129",
-    title: "Jesus Calls Us O'er The Tumult",
-    category: "hymn",
+    title: "Moonbeam Lullaby",
+    Level: "C",
     path: [
-      require('../assets/hymns/JesusCallsUsOerTheTumult.jpg')
+      '../assets/Songs/Moonbeam_Lullaby_C.pdf'
 
     ],
   },
@@ -738,306 +719,270 @@ const songEntries = [
   {
     id: "129",
     title: "Just As I Am",
-    category: "hymn",
+    Level: "1h",
     path: [
-      require('../assets/hymns/JustAsIAm-0.jpg'),
-      require('../assets/hymns/JustAsIAm-1.jpg')
+      '../assets/Songs/Moonbeam_Lullaby_1h.pdf'
+    ],
+  },
+
+  {
+    id: "129",
+    title: "My Best Friend",
+    Level: "1h",
+    path: [
+      '../assets/Songs/My_Best_Friend_1h.pdf'
 
     ],
   },
 
   {
     id: "129",
-    title: "Oh Love That Wilt Not Let Me Go",
-    category: "hymn",
+    title: "My Best Friend",
+    Level: "C",
     path: [
-      require('../assets/hymns/OhLoveThatWiltNotLetMeGo.jpg')
-
-    ],
-  },
-
-  {
-    id: "129",
-    title: "Out Of My Bondage Sorrow And Night",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/OutOfMyBondageSorrowAndNight.jpg')
+      '../assets/Songs/My_Best_Friend_C.pdf'
 
     ],
   },
   {
     id: "129",
     title: "Pass Me Not O Gentle Savior",
-    category: "hymn",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/PassMeNotOGentleSavior-0.jpg'),
-      require('../assets/hymns/PassMeNotOGentleSavior-1.jpg')
+      '../assets/Songs/My_Big_Feelings_1h8.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "My Big Feelings",
+    Level: "C8",
+    path: [
+      '../assets/Songs/My_Big_Feelings_C8.pdf'
 
     ],
   },
   {
     id: "129",
-    title: "Softly And Tenderly",
-    category: "hymn",
+    title: "My Little Ladybug",
+    Level: "C8",
     path: [
-      require('../assets/hymns/SoftlyAndTenderly.jpg')
-
+      '../assets/Songs/My_Little_Ladybug_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Take My Life And Let It Be Consecrated",
-    category: "hymn",
+    title: "My Little Ladybug",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/TakeMyLifeAndLetItBeConsecrated-0.jpg'),
-      require('../assets/hymns/TakeMyLifeAndLetItBeConsecrated-1.jpg')
-
-    ],
-  },
-
-
-
-
-  {
-    id: "129",
-    title: "According To Thy Gracious Word",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/AccordingToThyGraciousWord.jpg')
-
-    ],
-  },
-  {
-    id: "129",
-    title: "A Child Of The King",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/AChildOfTheKing.jpg')
-
-    ],
-  },
-  {
-    id: "129",
-    title: "All Praise To You My God This Night",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/AllPraiseToYouMyGodThisNight.jpg')
-
-    ],
-  },
-  {
-    id: "129",
-    title: "All Day Long",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/AllDayLong.jpg')
+      '../assets/Songs/My_Little_Ladybug_mid8.pdf'
 
     ],
   },
 
   {
     id: "129",
-    title: "Almighty Father Hear Our Prayer",
-    category: "hymn",
+    title: "My Name Starts With...",
+    Level: "1h",
     path: [
-      require('../assets/hymns/AlmightyFatherHearOurPrayer.jpg')
+      '../assets/Songs/My_Name_Starts_With..._1h.pdf'
 
     ],
   },
 
   {
     id: "129",
-    title: "Blessed Be The Tie",
-    category: "hymn",
+    title: "My Name Starts With...",
+    Level: "C",
     path: [
-      require('../assets/hymns/BlessedBeTheTie-0.jpg'),
-      require('../assets/hymns/BlessedBeTheTie-1.jpg')
-
+      '../assets/Songs/My_Name_Starts_With..._C.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Built On The Rock",
-    category: "hymn",
+    title: "Nap Time Lullaby",
+    Level: "1h",
     path: [
-      require('../assets/hymns/BuiltOnTheRock-0.jpg'),
-      require('../assets/hymns/BuiltOnTheRock-1.jpg')
-
+      '../assets/Songs/Nap_Time_Lullaby_1h.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Christ Is Made The Sure Foundation",
-    category: "hymn",
+    title: "Nap Time Lullaby",
+    Level: "C",
     path: [
-      require('../assets/hymns/ChristIsMadeTheSureFoundation.jpg')
+      '../assets/Songs/Nap_Time_Lullaby_C.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Christ We Do All Adore Thee",
-    category: "hymn",
+    title: "One And Two",
+    Level: "C",
     path: [
-      require('../assets/hymns/ChristWeDoAllAdoreThee.jpg')
+      '../assets/Songs/One_And_Two_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "Come All Christians Be Committed",
-    category: "hymn",
+    title: "One, Two, Buckle My Shoe",
+    Level: "C8",
     path: [
-      require('../assets/hymns/ComeAllChristiansBeCommitted-0.jpg'),
-      require('../assets/hymns/ComeAllChristiansBeCommitted-1.jpg')
+      '../assets/Songs/One_Two_Buckle_My_Shoe_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Come Holy Spirit Dove Divine",
-    category: "hymn",
+    title: "One, Two, Buckle My Shoe",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/ComeHolySpiritDoveDivine.jpg')
+      '../assets/Songs/One_Two_Buckle_My_Shoes_1h8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Come Thou Fount (Second Version)",
-    category: "hymn",
+    title: "Pajama Dance",
+    Level: "1h",
     path: [
-      require('../assets/hymns/ComeThouFountv2.jpg')
+      '../assets/Songs/Pajama_Dance_1h.pdf'
     ],
   },
   {
     id: "129",
-    title: "Come We That Love The Lord",
-    category: "hymn",
+    title: "Pirates Ahoy!",
+    Level: "C8",
     path: [
-      require('../assets/hymns/ComeWeThatLoveTheLord.jpg')
+      '../assets/Songs/Pirates_Ahoy!_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Come Ye Thankful People Come",
-    category: "hymn",
+    title: "Pirates Ahoy!",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/ComeYeThankfulPeopleCome.jpg')
+      '../assets/Songs/Pirates_Ahoy!_1h8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Count Your Blessings",
-    category: "hymn",
+    title: "Princess And Dragon",
+    Level: "1h",
     path: [
-      require('../assets/hymns/CountYourBlessings.jpg')
+      '../assets/Songs/Princess_And_Dragon_1h.pdf'
     ],
   },
 
 
   {
     id: "129",
-    title: "Faith Of Our Fathers",
-    category: "hymn",
+    title: "Princess And Dragon",
+    Level: "C",
     path: [
-      require('../assets/hymns/FaithOfOurFathers.jpg')
+      '../assets/Songs/Princess_And_Dragon_C.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Footsteps Of Jesus",
-    category: "hymn",
+    title: "Pumpkin Patch",
+    Level: "1h",
     path: [
-      require('../assets/hymns/FootstepsOfJesus-0.jpg'),
-      require('../assets/hymns/FootstepsOfJesus-1.jpg')
+      '../assets/Songs/Pumpkin_Patch_1h.pdf'
     ],
   },
   {
     id: "129",
-    title: "For All The Saints",
-    category: "hymn",
+    title: "Pumpkin Patch",
+    Level: "C",
     path: [
-      require('../assets/hymns/ForAllTheSaints.jpg')
+      '../assets/Songs/Pumpkin_Patch_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "Forever with The Lord",
-    category: "hymn",
+    title: "Pumpkin Patch",
+    Level: "C8",
     path: [
-      require('../assets/hymns/ForeverWithTheLord-0.jpg'),
-      require('../assets/hymns/ForeverWithTheLord-1.jpg')
+      '../assets/Songs/Pumpkin_Patch_C8.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Glorious Things Of Thee Are Spoken",
-    category: "hymn",
+    title: "Quack Quack March",
+    Level: "1h",
     path: [
-      require('../assets/hymns/GloriousThingsOfTheeAreSpoken.jpg')
+      '../assets/Songs/Quack_Quack_March_1h.pdf'
     ],
   },
   {
     id: "129",
-    title: "God Of Our Fathers",
-    category: "hymn",
+    title: "Quack Quack March",
+    Level: "C",
     path: [
-      require('../assets/hymns/GodOfOurFathers.jpg')
+      '../assets/Songs/Quack_Quack_March_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "Higher Ground",
-    category: "hymn",
+    title: "Quiet As A Mouse",
+    Level: "C8",
     path: [
-      require('../assets/hymns/HigherGround.jpg')
+      '../assets/Songs/Quiet_As_A_Mouse_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Holy Lord",
-    category: "hymn",
+    title: "Rainbow In The Sky",
+    Level: "mid",
     path: [
-      require('../assets/hymns/HolyLord.jpg')
+      '../assets/Songs/Rainbow_In_The_Sky_Mid.pdf'
     ],
   },
   {
     id: "129",
-    title: "How Firm A Foundation",
-    category: "hymn",
+    title: "Rainbow Numbers",
+    Level: "1h",
     path: [
-      require('../assets/hymns/HowFirmAFoundation-0.jpg'),
-      require('../assets/hymns/HowFirmAFoundation-1.jpg')
-
+      '../assets/Songs/Rainbow_Numbers_1h.pdf'
     ],
   },
   {
     id: "129",
-    title: "How Lovely Is Thy Dwelling Place",
-    category: "hymn",
+    title: "Rainbow Numbers",
+    Level: "C",
     path: [
-      require('../assets/hymns/HowLovelyIsThyDwellingPlace.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "How Sweet The Name Of Jesus Sounds",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/HowSweetTheNameOfJesusSounds.jpg')
+      '../assets/Songs/Rainbow_Numbers_C.pdf'
     ],
   },
 
 
   {
     id: "129",
-    title: "I Gave My Life For Thee",
-    category: "hymn",
+    title: "Roar Like A Lion",
+    Level: "mid",
     path: [
-      require('../assets/hymns/IGaveMyLifeForThee-0.jpg'),
-      require('../assets/hymns/IGaveMyLifeForThee-1.jpg')
+      '../assets/Songs/Roar_Like_A_Lion_mid.pdf'
+    ],
+  },
+
+
+  {
+    id: "129",
+    title: "Robot Dance",
+    Level: "C",
+    path: [
+      '../assets/Songs/Robot_Dance_C.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Rock A Bye Rainbow",
+    Level: "C",
+    path: [
+      '../assets/Songs/Rock_A_Bye_Rainbow_C.pdf'
+
 
     ],
   },
@@ -1045,597 +990,441 @@ const songEntries = [
 
   {
     id: "129",
-    title: "I Love Thy Kingdom Lord",
-    category: "hymn",
+    title: "Shake It Low",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/ILoveThyKingdomLord.jpg')
+      '../assets/Songs/Shake_It_Low_mid8.pdf'
     ],
   },
   {
     id: "129",
-    title: "I Love To Tell The Story",
-    category: "hymn",
+    title: "Shapes Are Fun",
+    Level: "1h",
     path: [
-      require('../assets/hymns/ILoveToTellTheStory-0.jpg'),
-      require('../assets/hymns/ILoveToTellTheStory-1.jpg')
-
-    ],
-  },
-
-
-  {
-    id: "129",
-    title: "I Must Tell Jesus",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/IMustTellJesus-0.jpg'),
-      require('../assets/hymns/IMustTellJesus-1.jpg')
-
+      '../assets/Songs/Shapes_Are_Fun_1h.pdf'
     ],
   },
   {
     id: "129",
-    title: "I Need Thee Every Hour",
-    category: "hymn",
+    title: "Shapes Are Fun",
+    Level: "C",
     path: [
-      require('../assets/hymns/INeedTheeEveryHour-0.jpg'),
-      require('../assets/hymns/INeedTheeEveryHour-1.jpg')
-
+      '../assets/Songs/Shapes_Are_Fun_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "In Heavenly Love Abiding",
-    category: "hymn",
+    title: "Sharing Song",
+    Level: "1h",
     path: [
-      require('../assets/hymns/InHeavenlyLoveAbiding.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "In Loving Kindness Jesus Came",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/InLovingKindnessJesusCame.jpg')
+      '../assets/Songs/Sharing_Song_1h.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "In The Cross Of Christ I Glory",
-    category: "hymn",
+    title: "Sharing Song",
+    Level: "C",
     path: [
-      require('../assets/hymns/InTheCrossOfChristIGlory-0.jpg'),
-      require('../assets/hymns/InTheCrossOfChristIGlory-1.jpg')
+      '../assets/Songs/Sharing_Song_C.pdf'
     ]
   },
 
 
   {
     id: "129",
-    title: "I Will Sing Of My Redeemer",
-    category: "hymn",
+    title: "Sharing Song",
+    Level: "C8",
     path: [
-      require('../assets/hymns/IWillSingOfMyRedeemer-0.jpg'),
-      require('../assets/hymns/IWillSingOfMyRedeemer-1.jpg')
-
+      '../assets/Songs/Sharing_Song_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "I Will Sing The Wondrous Story (First Version)",
-    category: "hymn",
+    title: "Shh.. Song",
+    Level: "mid",
     path: [
-      require('../assets/hymns/IWillSingTheWondrousStory-0.jpg'),
-      require('../assets/hymns/IWillSingTheWondrousStory-1.jpg')
+      '../assets/Songs/Shh_Song_mid.pdf'
     ],
   },
   {
     id: "129",
-    title: "I Will Sing The Wondrous Story (Second Version)",
-    category: "hymn",
+    title: "Shoes On My Feet",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/IWIllSingTheWondrousStoryv2.jpg')
+      '../assets/Songs/Shoes_On_My_Feet_1h8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Jeruselum My Happy Home",
-    category: "hymn",
+    title: "Shoes On My Feet",
+    Level: "C8",
     path: [
-      require('../assets/hymns/JeruselumMyHappyHome-0.jpg'),
-      require('../assets/hymns/JeruselumMyHappyHome-1.jpg')
+      '../assets/Songs/Shoes_On_My_Feet_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Jeruselum The Golden",
-    category: "hymn",
+    title: "Silly Sandwich Song",
+    Level: "1h",
     path: [
-      require('../assets/hymns/JeruselumTheGolden.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "Jesus Loves Me",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/JesusLovesMev2.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "Jesus Shall Reign",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/JesusShallReign-0.jpg'),
-      require('../assets/hymns/JesusShallReign-1.jpg')
+      '../assets/Songs/Silly_Sandwich_Song_1h.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Lead On O King Eternal",
-    category: "hymn",
+    title: "Silly Sandwich Song",
+    Level: "C",
     path: [
-      require('../assets/hymns/LeadOnOKingEternal.jpg')
+      '../assets/Songs/Silly_Sandwich_Song_C.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Lets Us Break Bread Together",
-    category: "hymn",
+    title: "Sleepytime Wishes",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/LetUsBreakBreadTogether.jpg')
+      '../assets/Songs/Sleepytime_Wishes_1h8.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Lord Send A Revival",
-    category: "hymn",
+    title: "Sleepytime Wishes",
+    Level: "C8",
     path: [
-      require('../assets/hymns/LordThyChurchOnEarthIsSeeking-0.jpg'),
-      require('../assets/hymns/LordThyChurchOnEarthIsSeeking-1.jpg')
+      '../assets/Songs/Sleepytime_Wishes_c8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Love Lifted Me",
-    category: "hymn",
+    title: "Smile Inside, You'll Shine Outside",
+    Level: "1h",
     path: [
-      require('../assets/hymns/LoveLIftedMe-0.jpg'),
-      require('../assets/hymns/LoveLIftedMe-1.jpg')
+      '../assets/Songs/Smile_Inside_1h.pdf'
     ],
   },
 
 
   {
     id: "129",
-    title: "Mine Eyes Have Seen The Glory (First Version)",
-    category: "hymn",
+    title: "Smile Inside, You'll Shine Outside",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/MineEyesHaveSeenTheGlory-0.jpg'),
-      require('../assets/hymns/MineEyesHaveSeenTheGlory-1.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "Mine Eyes Have Seen The Glory (Second Version)",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/MineEyesHaveSeenTheGlory(AltVersion)-0.jpg'),
-      require('../assets/hymns/MineEyesHaveSeenTheGlory(AltVersion)-1.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "Moment By Moment",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/MomentByMoment.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "More About Jesus",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/MoreAboutJesus-0.jpg'),
-      require('../assets/hymns/MoreAboutJesus-1.jpg')
+      '../assets/Songs/Smile_Inside_1h8.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Must Jesus Bear The Cross Alone",
-    category: "hymn",
+    title: "Smile Inside, You'll Shine Outside",
+    Level: "C",
     path: [
-      require('../assets/hymns/MustJesusBearTheCrossAlone-0.jpg'),
-      require('../assets/hymns/MustJesusBearTheCrossAlone-1.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "My Country Tis Of Thee (First Version)",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/MyCountryTisOfThee.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "My Country Tis Of Thee (Second Version)",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/MyCountryTisOfThee(AltVersion)-0.jpg'),
-      require('../assets/hymns/MyCountryTisOfThee(AltVersion)-1.jpg'),
+      '../assets/Songs/Smile_Inside_C.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "My Faith Looks Up To Thee",
-    category: "hymn",
+    title: "Smile Inside, You'll Shine Outside",
+    Level: "C8",
     path: [
-      require('../assets/hymns/MyFaithLooksUpToThee-0.jpg'),
-      require('../assets/hymns/MyFaithLooksUpToThee-1.jpg'),
+      '../assets/Songs/Smile_Inside_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Nearer My God To Thee",
-    category: "hymn",
+    title: "Snack Song",
+    Level: "1h",
     path: [
-      require('../assets/hymns/NearerMyGodToTheev2-0.jpg'),
-      require('../assets/hymns/NearerMyGodToTheev2-1.jpg'),
-    ],
-  },
-
-  {
-    id: "129",
-    title: "Not What My Hands Have Done",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/NotWhatMyHandsHaveDone.jpg')
-    ],
-  },
-
-  {
-    id: "129",
-    title: "Now Thank We All Our God",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/NowThankWeAllOurGod.jpg')
+      '../assets/Songs/Snack_Song_1h .pdf'
     ],
   },
   {
     id: "129",
-    title: "Of All The Spirit's Gifts To Me",
-    category: "hymn",
+    title: "Snack Song",
+    Level: "C",
     path: [
-      require('../assets/hymns/OfAllTheSpiritsGiftsToMe.jpg')
+      '../assets/Songs/Snack_Song_C.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Space Explorer",
+    Level: "1h",
+    path: [
+      '../assets/Songs/Space_Explorer_1h.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "O Happy Day That Fixed My Choice",
-    category: "hymn",
+    title: "Space Explorer",
+    Level: "C",
     path: [
-      require('../assets/hymns/OHappyDayThatFixedMyChoice-0.jpg'),
-      require('../assets/hymns/OHappyDayThatFixedMyChoice-1.jpg'),
+      '../assets/Songs/Space_Explorer_C.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Spell My Name",
+    Level: "1h",
+    path: [
+      '../assets/Songs/Spell_My_Name_1h.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Spell My Name",
+    Level: "C",
+    path: [
+      '../assets/Songs/Spell_My_Name_C.pdf'
+    ],
+  },
+
+  {
+    id: "129",
+    title: "Spin Around",
+    Level: "mid8",
+    path: [
+      '../assets/Songs/Spin_Around_mid8.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Squeaky Mouse Song",
+    Level: "1h8",
+    path: [
+      '../assets/Songs/Squeaky_Mouse_Song_1h8.pdf'
+    ],
+  },
+
+  {
+    id: "129",
+    title: "Squeaky Mouse Song",
+    Level: "C8",
+    path: [
+      '../assets/Songs/Squeaky_Mouse_Song_C8.pdf'
+    ],
+  },
+
+  {
+    id: "129",
+    title: "Starry Night",
+    Level: "mid",
+    path: [
+      '../assets/Songs/Starry_Night_mid.pdf'
+    ],
+  },
+  {
+    id: "129",
+    title: "Stretch Like A Star",
+    Level: "C",
+    path: [
+      '../assets/Songs/Stetch_Like_A_Star_C.pdf'
+    ],
+  },
+
+  {
+    id: "129",
+    title: "Sunny Day",
+    Level: "C",
+    path: [
+      '../assets/Songs/Sunny_Day_C.pdf'
     ],
   },
   {
     id: "129",
     title: "O Lord May Church And Home Combine",
-    category: "hymn",
+    Level: "C8",
     path: [
-      require('../assets/hymns/OLordMayChurchAndHomeCombine-0.jpg'),
-      require('../assets/hymns/OLordMayChurchAndHomeCombine-1.jpg'),
+      '../assets/Songs/Talking_Cat_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Once To Every Man And Nation",
-    category: "hymn",
+    title: "Thank You Dance",
+    Level: "C",
     path: [
-      require('../assets/hymns/OnceToEveryManAndNation-0.jpg'),
-      require('../assets/hymns/OnceToEveryManAndNation-1.jpg'),
+      '../assets/Songs/Thank_You_Dance_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "One By One",
-    category: "hymn",
+    title: "Thank You Dance",
+    Level: "C8",
     path: [
-      require('../assets/hymns/OneByOne.jpg')
+      '../assets/Songs/Thank_You_Dance_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "On Jordan's Stormy Banks",
-    category: "hymn",
+    title: "The Talking Cat",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/OnJordansStormyBanks-0.jpg'),
-      require('../assets/hymns/OnJordansStormyBanks-1.jpg'),
+      '../assets/Songs/The_Talking_Cat_1h8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Only Believe",
-    category: "hymn",
+    title: "The Color Song",
+    Level: "C",
     path: [
-      require('../assets/hymns/OnlyBelieve.jpg')
+      '../assets/Songs/The_Color_Song_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "Onward Christian Soldiers",
-    category: "hymn",
+    title: "The Meow Song",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/OnwardChristianSoldiers-0.jpg'),
-      require('../assets/hymns/OnwardChristianSoldiers-1.jpg'),
+      '../assets/Songs/The_Meow_Song_mid8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Open My Eyes That I May See",
-    category: "hymn",
+    title: "The Pajama Dance",
+    Level: "C8",
     path: [
-      require('../assets/hymns/OpenMyEyesThatIMaySee.jpg')
+      '../assets/Songs/The_Pajama_Dance_C8.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "O Zion Haste",
-    category: "hymn",
+    title: "The Tickle Monster",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/OZionHaste.jpg')
+      '../assets/Songs/The_Tickle_Monster_mid8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Praise And Thanksgiving",
-    category: "hymn",
+    title: "Time For Bed",
+    Level: "1h",
     path: [
-      require('../assets/hymns/PraiseAndThanksgiving.jpg')
-    ],
-  },
-
-  {
-    id: "129",
-    title: "Purer In Heart O God",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/PurerInHeartOGod.jpg')
+      '../assets/Songs/Time_For_Bed_1h.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Redeemed",
-    category: "hymn",
+    title: "Time For Bed",
+    Level: "C",
     path: [
-      require('../assets/hymns/Redeemedv2-0.jpg'),
-      require('../assets/hymns/Redeemedv2-1.jpg'),
-      require('../assets/hymns/Redeemedv2-2.jpg')
+      '../assets/Songs/Time_For_Bed_C.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Rock Of Ages",
-    category: "hymn",
+    title: "Tiny Turtle Time",
+    Level: "C",
     path: [
-      require('../assets/hymns/RockOfAges.jpg')
+      '../assets/Songs/Tiny_Turtle_Time_C.pdf'
+    ],
+  },
+
+  {
+    id: "129",
+    title: "Tiptoe Through The Garden",
+    Level: "1h",
+    path: [
+      '../assets/Songs/Tiptoe_Through_The_Garden_1h.pdf'
     ],
   },
   {
     id: "129",
     title: "Satisfied",
-    category: "hymn",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/Satisfied.jpg')
+      '../assets/Songs/Underwater_Boogie_mid8.pdf'
     ],
   },
   {
     id: "129",
     title: "Savior Teach Me Day By Day",
-    category: "hymn",
+    Level: "mid",
     path: [
-      require('../assets/hymns/SaviorTeachMeDayByDay.jpg')
+      '../assets/Songs/Were_All_Friends_mid.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Shall We Gather At The River",
-    category: "hymn",
+    title: "When I Feel Mad",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/ShallWeGatherAtTheRiver-0.jpg'),
-      require('../assets/hymns/ShallWeGatherAtTheRiver-1.jpg'),
+      '../assets/Songs/When_I_Feel_Mad_1h8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Since I Have Been Redeemed",
-    category: "hymn",
+    title: "When I Feel Mad",
+    Level: "C8",
     path: [
-      require('../assets/hymns/SinceIHaveBeenRedeemed.jpg')
-    ],
-  },
-
-  {
-    id: "129",
-    title: "Sing To The Lord Of Harvest",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/SingToTheLordOfHarvest.jpg')
+      '../assets/Songs/When_I_Feel_Mad_C8.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "Surely Goodness And Mercy",
-    category: "hymn",
+    title: "Wiggle Like A Worm",
+    Level: "C8",
     path: [
-      require('../assets/hymns/SurelyGoodnessAndMercy-0.jpg'),
-      require('../assets/hymns/SurelyGoodnessAndMercy-1.jpg'),
-    ],
-  },
-  {
-    id: "129",
-    title: "The Church's One Foundation",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/TheMasterHathCome-0.jpg'),
-      require('../assets/hymns/TheMasterHathCome-1.jpg'),
-    ],
-  },
-  {
-    id: "129",
-    title: "There Shall Be Showers Of Blessing",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/ThereShallBeShowersOfBlessing.jpg')
+      '../assets/Songs/Wiggle_Like_A_Worm_C8.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "The Solid Rock",
-    category: "hymn",
+    title: "You And Me",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/TheSolidRock.jpg')
+      '../assets/Songs/You_And_Me_1h8.pdf'
     ],
   },
   {
     id: "129",
-    title: "Tis' So Sweet To Trust In Jesus",
-    category: "hymn",
+    title: "You And Me",
+    Level: "C8",
     path: [
-      require('../assets/hymns/TisSoSweetToTrustInJesus.jpg')
+      '../assets/Songs/You_And_Me_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "To The Work",
-    category: "hymn",
+    title: "You Can Play Too",
+    Level: "1h8",
     path: [
-      require('../assets/hymns/ToTheWork-0.jpg'),
-      require('../assets/hymns/ToTheWork-1.jpg'),
-    ],
-  },
-
-  {
-    id: "129",
-    title: "Trust And Obey",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/TrustAndObey-0.jpg'),
-      require('../assets/hymns/TrustAndObey-1.jpg'),
-    ],
-  },
-  {
-    id: "129",
-    title: "Trusting Jesus",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/TrustingJesus.jpg')
+      '../assets/Songs/You_Can_Play_Too_1h8.pdf'
     ],
   },
 
   {
     id: "129",
-    title: "We Are Climbing Jacob's Ladder",
-    category: "hymn",
+    title: "You Can Play Too",
+    Level: "C8",
     path: [
-      require('../assets/hymns/WeAreClimbingJacobsLadder-0.jpg'),
-      require('../assets/hymns/WeAreClimbingJacobsLadder-1.jpg'),
-    ],
-  },
-
-  {
-    id: "129",
-    title: "We Gather Together",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WeGatherTogether.jpg')
+      '../assets/Songs/You_Can_Play_Too_C8.pdf'
     ],
   },
   {
     id: "129",
-    title: "We Give Thee But Thine Own",
-    category: "hymn",
+    title: "Zoo Time",
+    Level: "C",
     path: [
-      require('../assets/hymns/WeGiveTheeButThineOwn.jpg')
-    ],
-  },
-
-  {
-    id: "129",
-    title: "We'll Work Till Jesus Comes",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WellWorkTillJesusComes.jpg')
-    ],
-  },
-
-  {
-    id: "129",
-    title: "We're Marching To Zion",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WereMarchingToZion-0.jpg'),
-      require('../assets/hymns/WereMarchingToZion-1.jpg'),
-    ],
-  },
-
-  {
-    id: "129",
-    title: "We Worship Round This Table",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WeWorshipRoundThisTable-0.jpg'),
-      require('../assets/hymns/WeWorshipRoundThisTable-1.jpg'),
+      '../assets/Songs/Zoo_Time_C.pdf'
     ],
   },
   {
     id: "129",
-    title: "When The Morning Comes",
-    category: "hymn",
+    title: "Yoyo",
+    Level: "mid8",
     path: [
-      require('../assets/hymns/WhenTheMorningComes-0.jpg'),
-      require('../assets/hymns/WhenTheMorningComes-1.jpg'),
-    ],
-  },
-  {
-    id: "129",
-    title: "When The Roll Is Called Up Yonder",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WhenTheRollIsCalledUpYonder-0.jpg'),
-      require('../assets/hymns/WhenTheRollIsCalledUpYonder-1.jpg'),
-    ],
-  },
-  {
-    id: "129",
-    title: "When We All Get To Heaven",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WhenWeAllGetToHeaven.jpg')
-    ],
-  },
-  {
-    id: "129",
-    title: "Whososever Meaneth Me",
-    category: "hymn",
-    path: [
-      require('../assets/hymns/WhososeverMeanethMe.jpg')
+      '../assets/Songs/Yoyo_mid8.pdf'
     ],
   },
 ];
