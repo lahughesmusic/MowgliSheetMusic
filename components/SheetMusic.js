@@ -1,21 +1,33 @@
 import React from 'react';
-import { StyleSheet, ImageBackground, View, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Image, ImageBackground, View, ScrollView, Dimensions } from 'react-native';
 import songEntries from './Data1';
 
 export default function SheetMusic({ route }) {
-    const { Songs, category } = route.params;
+    const { title, category } = route.params;
 
     function getImagesByTitle(title, category) {
-        const entry = songEntries.find(song => song.title === title && song.category === category);
-        return entry ? (Array.isArray(entry.path) ? entry.path : [entry.path]) : [];
+        if (!title || !category) return [];
+
+        const match = songEntries.find(song =>
+            song?.title?.toLowerCase().replace(/\s+/g, ' ').trim() === title.toLowerCase().replace(/\s+/g, ' ').trim() &&
+            song?.category?.toLowerCase().replace(/\s+/g, ' ').trim() === category.toLowerCase().replace(/\s+/g, ' ').trim()
+        );
+
+        return match?.path || [];
     }
 
-    const images = getImagesByTitle(Songs, category);
+    const images = getImagesByTitle(title, category);
+
 
     return (
         <ScrollView style={styles.container} contentContainerStyle={styles.scrollViewContent}>
             {images.map((image, index) => (
-                <ImageBackground key={index} source={image} style={styles.imageBackground} resizeMode='stretch' />
+                <Image
+                    key={index}
+                    source={image}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
             ))}
         </ScrollView>
     );
@@ -40,4 +52,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    image: {
+        width: Dimensions.get('window').width,
+        height: undefined,
+        aspectRatio: 1, // You can adjust this if you know the general ratio (e.g. 8.5/11 for portrait sheet music)
+        marginBottom: 10,
+    }
 });

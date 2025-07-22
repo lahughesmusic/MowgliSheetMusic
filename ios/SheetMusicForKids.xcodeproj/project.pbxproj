@@ -21,7 +21,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SheetMusicForKids/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SheetMusicForKids/Info.plist; sourceTree = "<group>"; };
 		2318FFB4528BBFFC17977CBF /* Pods-SheetMusicForKids.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetMusicForKids.release.xcconfig"; path = "Target Support Files/Pods-SheetMusicForKids/Pods-SheetMusicForKids.release.xcconfig"; sourceTree = "<group>"; };
-		492B564FA11D50F234710064 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = SheetMusicForKids/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		492B564FA11D50F234710064 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = SheetMusicForKids/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		77325D4AC3DF3C7410983A98 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-SheetMusicForKids/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = SheetMusicForKids/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
@@ -128,7 +128,6 @@
 				CCE8E0ABD52C6B53B5514A2D /* Pods-SheetMusicForKids.debug.xcconfig */,
 				2318FFB4528BBFFC17977CBF /* Pods-SheetMusicForKids.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -355,7 +354,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leamcshan.sheetmusicforkids;
-				PRODUCT_NAME = SheetMusicForKids;
+				PRODUCT_NAME = "SheetMusicForKids";
 				SWIFT_OBJC_BRIDGING_HEADER = "SheetMusicForKids/SheetMusicForKids-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -386,7 +385,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leamcshan.sheetmusicforkids;
-				PRODUCT_NAME = SheetMusicForKids;
+				PRODUCT_NAME = "SheetMusicForKids";
 				SWIFT_OBJC_BRIDGING_HEADER = "SheetMusicForKids/SheetMusicForKids-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

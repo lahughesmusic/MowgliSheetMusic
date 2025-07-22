@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as ScreenOrientation from 'expo-screen-orientation';
+import Constants from 'expo-constants';
 
 import Home from './components/Home';
 import SheetMusic from './components/SheetMusic';
 import FilterScreen from './components/FilterScreen';
 import MusicalHangman from './components/HangmanWordGames/MusicalHangman';
+import SongCategoryScreen from './components/SongCategoryScreen';
+import FlashcardCategoryScreen from './components/FlashcardsComponents/FlashcardCategoryScreen';
+import NoteRecognitionSubcategoryScreen from './components/FlashcardsComponents/NoteRecognitionSubcategoryScreen';
+import FlashcardViewer from './components/FlashcardsComponents/FlashcardViewer';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  useEffect(() => {
+    const lockOrientation = async () => {
+      // Only force landscape in builds, not in Expo Go
+      if (Constants.appOwnership !== 'expo') {
+        await ScreenOrientation.lockAsync(
+          ScreenOrientation.OrientationLock.LANDSCAPE_LEFT
+        );
+      }
+    };
+    lockOrientation();
+  }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Sheet Music for Kids">
@@ -25,6 +42,17 @@ export default function App() {
             headerStyle: {
               backgroundColor: 'black',
             },
+          }}
+        />
+
+        {/* Show song categories */}
+        <Stack.Screen
+          name="SongCategoryScreen"
+          component={SongCategoryScreen}
+          options={{
+            title: 'Choose Song Type',
+            headerTintColor: 'gray',
+            headerStyle: { backgroundColor: 'black' },
           }}
         />
         {/* //Search for songs after category is selected */}
@@ -66,6 +94,36 @@ export default function App() {
             title: 'Musical Hangman',
           }}
         />
+        <Stack.Screen
+          name="FlashcardCategories"
+          component={FlashcardCategoryScreen}
+          options={{
+            title: 'Flashcard Categories',
+            headerTintColor: 'gray',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+
+        <Stack.Screen
+          name="NoteRecognitionSubcategories"
+          component={NoteRecognitionSubcategoryScreen}
+          options={{
+            title: 'Note Recognition',
+            headerTintColor: 'gray',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+
+        <Stack.Screen
+          name="FlashcardViewer"
+          component={FlashcardViewer}
+          options={{
+            title: 'Flashcards',
+            headerTintColor: 'gray',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

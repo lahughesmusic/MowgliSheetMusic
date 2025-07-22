@@ -9,10 +9,12 @@ import {
     Dimensions,
     ScrollView,
     ImageBackground
+
 } from 'react-native';
 import wordsData from './words.json';
 import noteImages from './helperMap';
 import cardBackground from './Blank_Card_Template.png';
+
 
 const musicalAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 const { width } = Dimensions.get('window');
@@ -25,6 +27,7 @@ export default function MusicalHangman() {
     const [gameWon, setGameWon] = useState(false);
     const [randomImages, setRandomImages] = useState({});
     const [lastWord, setLastWord] = useState('');
+
 
     const loadNewWord = () => {
         const wordList = wordsData.wordsData;
@@ -45,12 +48,18 @@ export default function MusicalHangman() {
             }
         });
 
+        // ✅ Only this one stays
+        const guessesInit = lowerWord.split('').map(letter =>
+            musicalAlphabet.includes(letter) ? '' : letter
+        );
+        setGuesses(guessesInit);
+
         setWord(lowerWord);
-        setGuesses(Array(lowerWord.length).fill(''));
         setInputRefs(Array(lowerWord.length).fill().map(() => React.createRef()));
         setRandomImages(imageChoices);
         setGameWon(false);
     };
+
 
     useEffect(() => {
         loadNewWord();
@@ -80,16 +89,16 @@ export default function MusicalHangman() {
     const handleGuess = (text, index) => {
         if (text.length > 1 || (text && !/^[a-zA-Z]$/.test(text))) return;
 
+        const isMusical = musicalAlphabet.includes(word[index]);
         const newGuesses = [...guesses];
         newGuesses[index] = text.toLowerCase();
-        setGuesses(newGuesses);
 
-        if (text.toLowerCase() !== word[index]) {
+        if (isMusical && text.toLowerCase() !== word[index]) {
             Alert.alert('Incorrect', 'Try another letter!');
-            newGuesses[index] = '';
-            setGuesses(newGuesses);
-            return;
+            return; // ❌ don't clear it — just don't accept it
         }
+
+        setGuesses(newGuesses);
 
         if (index < word.length - 1) {
             inputRefs[index + 1]?.current?.focus();
@@ -103,7 +112,7 @@ export default function MusicalHangman() {
 
         return (
             <View key={`input-${index}`} style={styles.letterStack}>
-                {isMusical ? (
+                {isMusical && note ? (
                     <Image source={note} style={styles.noteImage} />
                 ) : (
                     <View style={styles.noteImagePlaceholder} />
@@ -118,12 +127,13 @@ export default function MusicalHangman() {
                     maxLength={1}
                     ref={inputRefs[index]}
                     autoCapitalize="none"
-                    editable={isMusical && !gameWon}
+                    editable={!gameWon || !isMusical}
                     textAlign="center"
                 />
             </View>
         );
     };
+
 
     if (!word) {
         return (

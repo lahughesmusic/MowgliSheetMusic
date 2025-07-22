@@ -38,7 +38,7 @@
       </dict>
     </array>
     <key>CFBundleVersion</key>
-    <string>7</string>
+    <string>1</string>
     <key>LSMinimumSystemVersion</key>
     <string>12.0</string>
     <key>LSRequiresIPhoneOS</key>
@@ -50,33 +50,34 @@
       <key>NSAllowsLocalNetworking</key>
       <true/>
     </dict>
-<key>UILaunchScreen</key>
-<dict>
-  <key>BackgroundColor</key>
-  <string>#FFFFFF</string> <!-- or your desired background color -->
-  <key>ContentMode</key>
-  <string>Center</string>
-</dict>
-<key>UIRequiredDeviceCapabilities</key>
-<array>
-    <string>armv7</string>
-</array>
-
-   <key>UIRequiresFullScreen</key>
-<true/>
+    <key>UILaunchScreen</key>
+    <dict>
+      <key>BackgroundColor</key>
+      <string>#FFFFFF</string>
+      <key>ContentMode</key>
+      <string>Center</string>
+    </dict>
+    <key>UILaunchStoryboardName</key>
+    <string>SplashScreen</string>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+      <string>armv7</string>
+    </array>
+    <key>UIRequiresFullScreen</key>
+    <false/>
     <key>UIStatusBarStyle</key>
     <string>UIStatusBarStyleDefault</string>
     <key>UISupportedInterfaceOrientations</key>
     <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
     <key>UISupportedInterfaceOrientations~ipad</key>
     <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
       <string>UIInterfaceOrientationLandscapeLeft</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
     </array>
     <key>UIUserInterfaceStyle</key>
     <string>Light</string>

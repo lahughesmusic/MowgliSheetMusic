@@ -3,7 +3,7 @@
     "name": "Sheet Music For Kids",
     "slug": "SheetMusicForKids",
     "version": "1.0",
-    "orientation": "portrait",
+    "orientation": "landscape",
     "userInterfaceStyle": "light",
     "privacy": "public",
     "description": "A colorful and fun app that helps young children learn sheet music.",
