@@ -27,7 +27,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>com.musicaldev.SheetMusicForKids</string>
+          <string>com.leamcshan.sheetmusicforkids</string>
         </array>
       </dict>
       <dict>
@@ -38,7 +38,7 @@
       </dict>
     </array>
     <key>CFBundleVersion</key>
-    <string>1</string>
+    <string>7</string>
     <key>LSMinimumSystemVersion</key>
     <string>12.0</string>
     <key>LSRequiresIPhoneOS</key>
@@ -50,14 +50,20 @@
       <key>NSAllowsLocalNetworking</key>
       <true/>
     </dict>
-    <key>UILaunchStoryboardName</key>
-    <string>SplashScreen</string>
-    <key>UIRequiredDeviceCapabilities</key>
-    <array>
-      <string>arm64</string>
-    </array>
-    <key>UIRequiresFullScreen</key>
-    <false/>
+<key>UILaunchScreen</key>
+<dict>
+  <key>BackgroundColor</key>
+  <string>#FFFFFF</string> <!-- or your desired background color -->
+  <key>ContentMode</key>
+  <string>Center</string>
+</dict>
+<key>UIRequiredDeviceCapabilities</key>
+<array>
+    <string>armv7</string>
+</array>
+
+   <key>UIRequiresFullScreen</key>
+<true/>
     <key>UIStatusBarStyle</key>
     <string>UIStatusBarStyleDefault</string>
     <key>UISupportedInterfaceOrientations</key>

@@ -8,6 +8,11 @@
       "developmentClient": true,
       "distribution": "internal"
     },
+    "ios": {
+      "releaseChannel": "default",
+      "developmentClient": false,
+      "distribution": "store"
+    },
     "preview": {
       "distribution": "internal"
     },

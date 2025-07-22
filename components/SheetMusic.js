@@ -2,16 +2,15 @@ import React from 'react';
 import { StyleSheet, ImageBackground, View, ScrollView, Dimensions } from 'react-native';
 import songEntries from './Data1';
 
-export default function SheetMusic({ route, navigation }) {
-    const songTitle = route.params.Songs;
-    const category = route.params.category;
+export default function SheetMusic({ route }) {
+    const { Songs, category } = route.params;
 
     function getImagesByTitle(title, category) {
         const entry = songEntries.find(song => song.title === title && song.category === category);
-        return entry ? entry.path : [];
+        return entry ? (Array.isArray(entry.path) ? entry.path : [entry.path]) : [];
     }
 
-    const images = getImagesByTitle(songTitle, category);
+    const images = getImagesByTitle(Songs, category);
 
     return (
         <ScrollView style={styles.container} contentContainerStyle={styles.scrollViewContent}>
@@ -21,6 +20,7 @@ export default function SheetMusic({ route, navigation }) {
         </ScrollView>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {

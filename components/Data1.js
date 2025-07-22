@@ -728,7 +728,7 @@ const songEntries = [
   },
   {
     id: "129",
-    title: "Pass Me Not O Gentle Savior",
+    title: "My Big Feelings",
     category: "One Hand, 8th Notes",
     path: [
       require('../assets/Songs/My_Big_Feelings_1h8.jpeg')
@@ -1219,7 +1219,7 @@ const songEntries = [
   },
   {
     id: "129",
-    title: "O Lord May Church And Home Combine",
+    title: "The Talking Cat",
     category: "C Position, 8th Notes",
     path: [
       require('../assets/Songs/Talking_Cat_C8.jpeg')
@@ -1319,7 +1319,7 @@ const songEntries = [
   },
   {
     id: "129",
-    title: "Satisfied",
+    title: "Underwater Boogie",
     category: "Middle C Position, 8th Notes",
     path: [
       require('../assets/Songs/Underwater_Boogie_mid8.jpeg')
@@ -1327,7 +1327,7 @@ const songEntries = [
   },
   {
     id: "129",
-    title: "Savior Teach Me Day By Day",
+    title: "We're All Friends",
     category: "Middle C Position",
     path: [
       require('../assets/Songs/Were_All_Friends_mid.jpeg')

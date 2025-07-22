@@ -1,4 +1,4 @@
-package com.musicaldev.SheetMusicForKids
+package com.leamcshan.sheetmusicforkids
 
 import android.app.Application
 import android.content.res.Configuration

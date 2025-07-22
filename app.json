@@ -5,15 +5,33 @@
     "version": "1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "privacy": "public",
+    "description": "A colorful and fun app that helps young children learn sheet music.",
+    "owner": "musicaldev",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/SplashScreen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "extra": {
+      "supportEmail": "the.holy.dev@gmail.com",
+      "supportsDataCollection": false,
+      "privacyPolicyUrl": "https://docs.google.com/document/d/1V-YAeX8ZNRgB_VHe1pI19mk4YA5uqCjUH8oRMHAHti0/edit?usp=sharing",
+      "eas": {
+        "projectId": "543f8cb4-3b36-4d2a-9888-e0fb45b94cec"
+      }
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.musicaldev.SheetMusicForKids"
+      "bundleIdentifier": "com.leamcshan.sheetmusicforkids"
     },
     "android": {
-      "package": "com.musicaldev.SheetMusicForKids"
+      "package": "com.leamcshan.sheetmusicforkids",
+      "permissions": []
     },
     "web": {}
   }

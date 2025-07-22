@@ -26,9 +26,10 @@ class Search extends Component {
         console.log("Category received from FilterScreen:", category);
 
 
-        const filtered = category
-            ? sortedSongEntries.filter((s) => s.category === category)
-            : sortedSongEntries;
+        const filtered =
+            category && category !== "Show All"
+                ? sortedSongEntries.filter((s) => s.category === category)
+                : sortedSongEntries;
 
         this.state = {
             songEntries: filtered,
@@ -53,7 +54,10 @@ class Search extends Component {
         const { navigation } = this.props;
 
         const getItem = (item) => {
-            navigation.navigate('Next', { Songs: item.title, category: item.category }); // Add category
+            navigation.navigate('SheetMusic', {
+                title: item.title,
+                category: item.category
+            });
         };
 
         const renderItem = ({ item }) => (
@@ -87,7 +91,7 @@ class Search extends Component {
 
 export default function (props) {
     const navigation = useNavigation();
-    const route = useRoute(); // ✅ This gives you access to route.params
+    const route = useRoute();
     return <Search {...props} navigation={navigation} route={route} />;
 }
 
