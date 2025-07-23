@@ -27,7 +27,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>com.leamcshan.sheetmusicforkids</string>
+          <string>com.musicaldev.SheetMusicForKids</string>
         </array>
       </dict>
       <dict>
@@ -50,18 +50,16 @@
       <key>NSAllowsLocalNetworking</key>
       <true/>
     </dict>
-    <key>UILaunchScreen</key>
-    <dict>
-      <key>BackgroundColor</key>
-      <string>#FFFFFF</string>
-      <key>ContentMode</key>
-      <string>Center</string>
-    </dict>
     <key>UILaunchStoryboardName</key>
     <string>SplashScreen</string>
+	<key>UIDeviceFamily</key>
+<array>
+    <integer>1</integer> <!-- iPhone -->
+    <integer>2</integer> <!-- iPad -->
+</array>
     <key>UIRequiredDeviceCapabilities</key>
     <array>
-      <string>armv7</string>
+      <string>arm64</string>
     </array>
     <key>UIRequiresFullScreen</key>
     <false/>
@@ -69,15 +67,17 @@
     <string>UIStatusBarStyleDefault</string>
     <key>UISupportedInterfaceOrientations</key>
     <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
       <string>UIInterfaceOrientationLandscapeLeft</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
     <key>UISupportedInterfaceOrientations~ipad</key>
     <array>
-      <string>UIInterfaceOrientationLandscapeLeft</string>
-      <string>UIInterfaceOrientationLandscapeRight</string>
       <string>UIInterfaceOrientationPortrait</string>
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
     <key>UIUserInterfaceStyle</key>
     <string>Light</string>
