@@ -8,12 +8,17 @@ import {
     Image,
     Dimensions,
     ScrollView,
-    ImageBackground
+    ImageBackground,
+    TouchableOpacity
 
 } from 'react-native';
 import wordsData from './words.json';
 import noteImages from './helperMap';
 import cardBackground from './Blank_Card_Template.png';
+import * as ScreenOrientation from 'expo-screen-orientation';
+import { useFocusEffect } from '@react-navigation/native';
+import RNPickerSelect from 'react-native-picker-select'
+
 
 
 const musicalAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
@@ -21,6 +26,17 @@ const { width } = Dimensions.get('window');
 const scale = width / 375;
 
 export default function MusicalHangman() {
+    useFocusEffect(
+        React.useCallback(() => {
+            // Lock to landscape on focus
+            ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+
+            return () => {
+                // Allow full sensor-based rotation on blur
+                ScreenOrientation.unlockAsync();
+            };
+        }, [])
+    );
     const [word, setWord] = useState('');
     const [guesses, setGuesses] = useState([]);
     const [inputRefs, setInputRefs] = useState([]);
@@ -117,19 +133,24 @@ export default function MusicalHangman() {
                 ) : (
                     <View style={styles.noteImagePlaceholder} />
                 )}
-                <TextInput
-                    style={[
-                        styles.input,
-                        !isMusical && { backgroundColor: '#eee' }
-                    ]}
-                    value={(guesses[index] || '').toUpperCase()}
-                    onChangeText={text => handleGuess(text, index)}
-                    maxLength={1}
-                    ref={inputRefs[index]}
-                    autoCapitalize="none"
-                    editable={!gameWon || !isMusical}
-                    textAlign="center"
-                />
+                {isMusical ? (
+                    <RNPickerSelect
+                        onValueChange={(value) => handleGuess(value, index)}
+                        value={guesses[index]}
+                        useNativeAndroidPickerStyle={false}
+                        style={pickerSelectStyles}
+                        items={musicalAlphabet.map((note) => ({
+                            label: note.toUpperCase(),
+                            value: note,
+                        }))}
+                        placeholder={{ label: '—', value: '' }}
+                    />
+                ) : (
+                    <View style={styles.inputDisabled}>
+                        <Text>{letter.toUpperCase()}</Text>
+                    </View>
+                )}
+
             </View>
         );
     };
@@ -190,8 +211,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     input: {
-        width: 40 * scale,
-        height: 50 * scale,
+        width: 35 * scale,
+        height: 20 * scale,
         borderWidth: 2,
         borderColor: '#000',
         borderRadius: 6 * scale,
@@ -225,5 +246,54 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         height: '100%',
+    },
+    cycleButton: {
+        width: 35 * scale,
+        height: 35 * scale,
+        borderWidth: 2,
+        borderColor: '#000',
+        borderRadius: 6 * scale,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    },
+    inputDisabled: {
+        width: 40 * scale,
+        height: 35 * scale,
+        borderWidth: 2,
+        borderColor: '#ccc',
+        borderRadius: 6 * scale,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#eee',
+    },
+    buttonText: {
+        fontSize: 20 * scale,
+        fontWeight: 'bold',
+    },
+
+});
+
+const pickerSelectStyles = StyleSheet.create({
+    inputIOS: {
+        width: 40 * scale,
+        height: 35 * scale,
+        fontSize: 20 * scale,
+        textAlign: 'center',
+        borderWidth: 2,
+        borderColor: '#000',
+        borderRadius: 6 * scale,
+        paddingVertical: 5 * scale,
+        backgroundColor: 'white',
+    },
+    inputAndroid: {
+        width: 40 * scale,
+        height: 35 * scale,
+        fontSize: 20 * scale,
+        textAlign: 'center',
+        borderWidth: 2,
+        borderColor: '#000',
+        borderRadius: 6 * scale,
+        backgroundColor: 'white',
     },
 });

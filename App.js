@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import Constants from 'expo-constants';
-
 import Home from './components/Home';
 import SheetMusic from './components/SheetMusic';
 import FilterScreen from './components/FilterScreen';
@@ -16,17 +13,7 @@ import FlashcardViewer from './components/FlashcardsComponents/FlashcardViewer';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  useEffect(() => {
-    const lockOrientation = async () => {
-      // Only force landscape in builds, not in Expo Go
-      if (Constants.appOwnership !== 'expo') {
-        await ScreenOrientation.lockAsync(
-          ScreenOrientation.OrientationLock.LANDSCAPE_LEFT
-        );
-      }
-    };
-    lockOrientation();
-  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Sheet Music for Kids">

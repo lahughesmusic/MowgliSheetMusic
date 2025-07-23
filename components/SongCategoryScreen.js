@@ -1,6 +1,12 @@
-// components/SongCategoryScreen.js
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    ImageBackground,
+    useWindowDimensions,
+} from 'react-native';
 import image from '../assets/image.jpg';
 
 const songCategories = [
@@ -9,6 +15,9 @@ const songCategories = [
 ];
 
 export default function SongCategoryScreen({ navigation }) {
+    const { width } = useWindowDimensions();
+    const isTablet = width >= 768;
+
     const handlePress = (category) => {
         navigation.navigate('Search', { category });
     };
@@ -19,10 +28,12 @@ export default function SongCategoryScreen({ navigation }) {
                 {songCategories.map((cat) => (
                     <TouchableOpacity
                         key={cat}
-                        style={styles.button}
+                        style={[styles.button, isTablet && styles.buttonTablet]}
                         onPress={() => handlePress(cat)}
                     >
-                        <Text style={styles.buttonText}>{cat}</Text>
+                        <Text style={[styles.buttonText, isTablet && styles.buttonTextTablet]}>
+                            {cat}
+                        </Text>
                     </TouchableOpacity>
                 ))}
             </ImageBackground>
@@ -37,17 +48,29 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
     },
     background: {
+        flex: 1,
         width: '100%',
         height: '100%',
         justifyContent: 'center',
+        alignItems: 'center',
         paddingHorizontal: 20,
     },
     button: {
-        marginVertical: 10,
-        padding: 15,
-        backgroundColor: 'rgba(128, 128, 128, 0.3)',
+        marginVertical: 5,
+        paddingVertical: 5,
+        paddingHorizontal: 5,
+        backgroundColor: 'rgba(128, 128, 190, .7)',
         alignItems: 'center',
-        borderRadius: 10,
+        justifyContent: 'center',
+        borderRadius: 15,
+        width: 300,
+        alignSelf: 'center',
+        borderColor: 'black',
+        border: '8px solid black'
+    },
+    buttonTablet: {
+        paddingVertical: 12, // smaller buttons on tablet
+        paddingHorizontal: 20,
     },
     buttonText: {
         color: 'white',
@@ -55,5 +78,9 @@ const styles = StyleSheet.create({
         textShadowColor: 'black',
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 1,
+        textAlign: 'center'
+    },
+    buttonTextTablet: {
+        fontSize: 44, // keep this large
     },
 });
