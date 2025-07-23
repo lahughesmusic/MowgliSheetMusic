@@ -27,6 +27,9 @@
         ]
       },
       "requireFullScreen": true
+    },
+    "android": {
+      "package": "com.leamcshan.sheetmusickids"
     }
   },
   "android": {
