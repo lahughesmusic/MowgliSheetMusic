@@ -3,8 +3,11 @@
     "name": "Sheet Music For Kids",
     "slug": "SheetMusicForKids",
     "version": "1.0",
-    "orientation": "landscape",
     "userInterfaceStyle": "light",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "privacy": "public",
     "description": "A colorful and fun app that helps young children learn sheet music.",
     "owner": "musicaldev",
@@ -13,6 +16,20 @@
       "image": "./assets/SplashScreen.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.leamcshan.sheetmusickids",
+      "infoPlist": {
+        "UISupportedInterfaceOrientations~ipad": [
+          "UIInterfaceOrientationLandscapeLeft",
+          "UIInterfaceOrientationLandscapeRight"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.musicaldev.SheetMusicForKids",
+      "permissions": []
     },
     "extra": {
       "supportEmail": "the.holy.dev@gmail.com",
@@ -25,14 +42,12 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.leamcshan.sheetmusicforkids"
+    "web": {},
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
-    "android": {
-      "package": "com.leamcshan.sheetmusicforkids",
-      "permissions": []
-    },
-    "web": {}
+    "eas": {
+      "projectId": "543f8cb4-3b36-4d2a-9888-e0fb45b94cec"
+    }
   }
 }
