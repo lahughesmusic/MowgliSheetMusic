@@ -31,7 +31,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
 }
 expoAutolinking.useExpoModules()
 
-rootProject.name = 'SheetMusicForKids'
+rootProject.name = 'Sheet Music For Kids'
 
 expoAutolinking.useExpoVersionCatalog()
 
