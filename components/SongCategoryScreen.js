@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
     View,
     Text,
@@ -6,7 +6,11 @@ import {
     StyleSheet,
     ImageBackground,
     useWindowDimensions,
+    ScrollView,
+    SafeAreaView
 } from 'react-native';
+import * as ScreenOrientation from 'expo-screen-orientation';
+import { useFocusEffect } from '@react-navigation/native';
 import image from '../assets/image.jpg';
 
 const songCategories = [
@@ -18,26 +22,43 @@ export default function SongCategoryScreen({ navigation }) {
     const { width } = useWindowDimensions();
     const isTablet = width >= 768;
 
+    // 🔒 Force portrait orientation when screen is focused
+    useFocusEffect(
+        useCallback(() => {
+            ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+            return () => {
+                ScreenOrientation.unlockAsync(); // optional unlock when screen is blurred
+            };
+        }, [])
+    );
+
     const handlePress = (category) => {
         navigation.navigate('Search', { category });
     };
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.safeContainer}>
             <ImageBackground source={image} resizeMode="cover" style={styles.background}>
-                {songCategories.map((cat) => (
-                    <TouchableOpacity
-                        key={cat}
-                        style={[styles.button, isTablet && styles.buttonTablet]}
-                        onPress={() => handlePress(cat)}
-                    >
-                        <Text style={[styles.buttonText, isTablet && styles.buttonTextTablet]}>
-                            {cat}
-                        </Text>
-                    </TouchableOpacity>
-                ))}
+                <ScrollView contentContainerStyle={styles.scrollContainer}>
+                    {songCategories.map((cat) => (
+                        <TouchableOpacity
+                            key={cat}
+                            style={[styles.button, isTablet && styles.buttonTablet]}
+                            onPress={() => handlePress(cat)}
+                        >
+                            <Text
+                                style={[styles.buttonText, isTablet && styles.buttonTextTablet]}
+                                numberOfLines={2}
+                                adjustsFontSizeToFit
+                                minimumFontScale={0.5}
+                            >
+                                {cat}
+                            </Text>
+                        </TouchableOpacity>
+                    ))}
+                </ScrollView>
             </ImageBackground>
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -47,40 +68,50 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'black',
     },
+    scrollContainer: {
+        flexGrow: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: 20,
+    },
     background: {
         flex: 1,
         width: '100%',
         height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingHorizontal: 20,
     },
     button: {
+        width: '90%', // replaces stretch
+        maxWidth: 400,
         marginVertical: 5,
-        paddingVertical: 5,
-        paddingHorizontal: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
         backgroundColor: 'rgba(128, 128, 190, .7)',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 15,
-        width: 300,
-        alignSelf: 'center',
+        borderWidth: 2,
         borderColor: 'black',
-        border: '8px solid black'
     },
+
     buttonTablet: {
-        paddingVertical: 12, // smaller buttons on tablet
-        paddingHorizontal: 20,
+        paddingVertical: 16,
+        paddingHorizontal: 25,
     },
     buttonText: {
         color: 'white',
-        fontSize: 30,
+        fontSize: 24,
         textShadowColor: 'black',
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 1,
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingHorizontal: 10,
     },
     buttonTextTablet: {
-        fontSize: 44, // keep this large
+        fontSize: 44,
     },
+    safeContainer: {
+        flex: 1,
+        backgroundColor: 'black',
+    },
+
 });

@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
-import { View, Image, TouchableOpacity, StyleSheet, Text, Dimensions } from 'react-native';
+import {
+    View,
+    Image,
+    TouchableOpacity,
+    StyleSheet,
+    Text,
+    Dimensions,
+    Platform
+} from 'react-native';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
+const isSmallIphone = Platform.OS === 'ios' && Math.min(width, height) < 400;
+const scale = isSmallIphone ? 3 : width / 375;
 
 export default function FlashcardViewer({ route }) {
     const { cards } = route.params;
@@ -36,41 +46,49 @@ export default function FlashcardViewer({ route }) {
                     resizeMode="contain"
                 />
             </TouchableOpacity>
-
+            <Text style={styles.hint}>Click Card For Answer!</Text>
             <TouchableOpacity onPress={handleNext} style={styles.nextButton}>
-                <Text style={styles.buttonText}>Next</Text>
+
+                <Text style={styles.buttonText}>{'-->'}</Text>
             </TouchableOpacity>
         </View>
     );
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: 'lightgrey', // 🌤️ baby blue
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 10,
+        padding: 10 * scale,
     },
     card: {
         flex: 1,
         justifyContent: 'center',
-        width: width - 40,
-        marginVertical: 20,
+        width: width * 0.8 * scale,
+        marginVertical: 20 * scale,
     },
     image: {
         width: '100%',
         height: '100%',
-        borderRadius: 10,
+        borderRadius: 10 * scale,
     },
     nextButton: {
-        padding: 15,
-        backgroundColor: 'gray',
-        borderRadius: 10,
-        marginBottom: 40,
+        paddingVertical: 4 * scale,
+        paddingHorizontal: 15 * scale,
+        backgroundColor: 'green',
+        borderRadius: 10 * scale,
+        marginBottom: 40 * scale,
     },
     buttonText: {
-        color: 'white',
-        fontSize: 18,
+        color: 'magenta',
+        fontSize: 16 * scale,
+        textAlign: 'center',
+    },
+    hint: {
+        color: 'magenta',
+        marginBottom: 20,
+        fontSize: 30,
+        textAlign: 'center',
     },
 });

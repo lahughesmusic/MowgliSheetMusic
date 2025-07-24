@@ -16,13 +16,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Sheet Music for Kids">
+      <Stack.Navigator initialRouteName="Musical Hangman & More!">
 
         <Stack.Screen
-          name="Sheet Music for Kids"
+          name="Musical Hangman & More!"
           component={FilterScreen}
           options={{
-            title: 'Sheet Music for Kids',
+            title: 'Musical Hangman & More!',
             headerBackTitle: 'TEST TEST TEST',
             headerShown: true,
             headerTintColor: 'gray',
@@ -62,7 +62,7 @@ export default function App() {
           component={SheetMusic}
           options={{
             headerShown: true, // ✅ just in case
-            title: 'Sheet Music for Kids',
+            title: 'Musical Hangman & More!',
             headerBackTitle: 'Search Music',
             headerTintColor: 'gray',
             headerStyle: {
@@ -75,7 +75,7 @@ export default function App() {
           component={MusicalHangman}
           options={{
             headerShown: true,
-            headerBackTitle: 'Sheet Music For Kids',
+            headerBackTitle: 'Musical Hangman & More!',
             headerTintColor: 'gray',
             headerStyle: { backgroundColor: 'black' },
             title: 'Musical Hangman',

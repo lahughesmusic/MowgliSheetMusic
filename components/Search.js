@@ -25,7 +25,6 @@ class Search extends Component {
         const category = props.route?.params?.category;
         console.log("Category received from FilterScreen:", category);
 
-
         const filtered =
             category && category !== "Show All"
                 ? sortedSongEntries.filter((s) => s.category === category)
@@ -47,8 +46,6 @@ class Search extends Component {
         });
         this.setState({ songEntries: updatedData, searchValue: text });
     };
-
-
 
     render() {
         const { navigation } = this.props;
@@ -83,6 +80,8 @@ class Search extends Component {
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id}
                     ItemSeparatorComponent={ItemSeparatorView}
+                    ListFooterComponent={<View style={{ height: 40 }} />}
+                    contentContainerStyle={{ paddingBottom: 40 }}
                 />
             </View>
         );
@@ -109,7 +108,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textShadowRadius: 50,
         textShadowColor: 'black',
-        textShadowColor: 'black',
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 1,
     },
@@ -118,7 +116,6 @@ const styles = StyleSheet.create({
         color: '#ddd',
         fontSize: 16,
         marginTop: 4,
-        textShadowColor: 'black',
         textShadowColor: 'black',
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 1,

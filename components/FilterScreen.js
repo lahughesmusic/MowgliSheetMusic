@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
     View,
     Text,
@@ -7,6 +7,8 @@ import {
     ImageBackground,
     useWindowDimensions,
 } from 'react-native';
+import * as ScreenOrientation from 'expo-screen-orientation';
+import { useFocusEffect } from '@react-navigation/native';
 import image from '../assets/image.jpg';
 
 const homeCategories = ['Songs', 'Musical Hangman', 'Flashcards'];
@@ -14,6 +16,14 @@ const homeCategories = ['Songs', 'Musical Hangman', 'Flashcards'];
 export default function FilterScreen({ navigation }) {
     const { width } = useWindowDimensions();
     const isTablet = width >= 768;
+
+    // 🔒 Lock screen to portrait mode when focused
+    useFocusEffect(
+        React.useCallback(() => {
+            ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+            return undefined;
+        }, [])
+    );
 
     const handlePress = (cat) => {
         if (cat === 'Musical Hangman') {
@@ -71,8 +81,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         width: 300,
         alignSelf: 'center',
+        borderWidth: 2,
         borderColor: 'black',
-        border: '8px solid black'
     },
     buttonTablet: {
         paddingVertical: 12,

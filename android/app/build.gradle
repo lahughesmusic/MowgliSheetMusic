@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.leamcshan.sheetmusickids'
+    namespace 'com.leamcshan.MusicalHangmanAndMore'
     defaultConfig {
-        applicationId 'com.leamcshan.sheetmusickids'
+        applicationId 'com.leamcshan.MusicalHangmanAndMore'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -2,52 +2,54 @@ import React, { useState, useEffect } from 'react';
 import {
     View,
     Text,
-    TextInput,
     StyleSheet,
     Alert,
     Image,
     Dimensions,
     ScrollView,
     ImageBackground,
-    TouchableOpacity
-
+    TouchableOpacity,
+    Platform,
 } from 'react-native';
 import wordsData from './words.json';
 import noteImages from './helperMap';
 import cardBackground from './Blank_Card_Template.png';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useFocusEffect } from '@react-navigation/native';
-import RNPickerSelect from 'react-native-picker-select'
-
-
 
 const musicalAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
-const { width } = Dimensions.get('window');
-const scale = width / 375;
+
+const { width, height } = Dimensions.get('window');
+
+const isIpad =
+    Platform.OS === 'ios' &&
+    (Platform.isPad || (Math.min(width, height) >= 768 && Math.max(width, height) >= 1024));
+
+const isSmallIphone = Platform.OS === 'ios' && Math.min(width, height) < 400;
+
+const scale = isIpad
+    ? (width / 375) * 1.2
+    : isSmallIphone
+        ? (width / 350) * 0.7
+        : width / 375;
 
 export default function MusicalHangman() {
     useFocusEffect(
         React.useCallback(() => {
-            // Lock to landscape on focus
             ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
-
-            return () => {
-                // Allow full sensor-based rotation on blur
-                ScreenOrientation.unlockAsync();
-            };
+            return undefined;
         }, [])
     );
+
     const [word, setWord] = useState('');
     const [guesses, setGuesses] = useState([]);
-    const [inputRefs, setInputRefs] = useState([]);
-    const [gameWon, setGameWon] = useState(false);
     const [randomImages, setRandomImages] = useState({});
+    const [activeInputIndex, setActiveInputIndex] = useState(null);
+    const [gameWon, setGameWon] = useState(false);
     const [lastWord, setLastWord] = useState('');
-
 
     const loadNewWord = () => {
         const wordList = wordsData.wordsData;
-
         let randomWord;
         do {
             randomWord = wordList[Math.floor(Math.random() * wordList.length)];
@@ -64,18 +66,16 @@ export default function MusicalHangman() {
             }
         });
 
-        // ✅ Only this one stays
-        const guessesInit = lowerWord.split('').map(letter =>
-            musicalAlphabet.includes(letter) ? '' : letter
+        const guessesInit = lowerWord.split('').map((letter) =>
+            musicalAlphabet.includes(letter) ? '' : letter.toLowerCase()
         );
-        setGuesses(guessesInit);
 
         setWord(lowerWord);
-        setInputRefs(Array(lowerWord.length).fill().map(() => React.createRef()));
+        setGuesses(guessesInit);
         setRandomImages(imageChoices);
         setGameWon(false);
+        setActiveInputIndex(null);
     };
-
 
     useEffect(() => {
         loadNewWord();
@@ -84,85 +84,88 @@ export default function MusicalHangman() {
     useEffect(() => {
         if (word && guesses.join('') === word && !gameWon) {
             setGameWon(true);
-            Alert.alert(
-                '🎉 Congratulations!',
-                'You solved the word!',
-                [
-                    {
-                        text: 'Next Word',
-                        onPress: () => loadNewWord(),
-                    },
-                    {
-                        text: 'OK',
-                        style: 'cancel',
-                    }
-                ],
-                { cancelable: true }
-            );
+            Alert.alert('🎉 Congratulations!', 'You solved the word!', [
+                { text: 'Next Word', onPress: () => loadNewWord() },
+                { text: 'OK', style: 'cancel' },
+            ]);
         }
     }, [guesses, word]);
 
-    const handleGuess = (text, index) => {
-        if (text.length > 1 || (text && !/^[a-zA-Z]$/.test(text))) return;
-
-        const isMusical = musicalAlphabet.includes(word[index]);
-        const newGuesses = [...guesses];
-        newGuesses[index] = text.toLowerCase();
-
-        if (isMusical && text.toLowerCase() !== word[index]) {
-            Alert.alert('Incorrect', 'Try another letter!');
-            return; // ❌ don't clear it — just don't accept it
-        }
-
-        setGuesses(newGuesses);
-
-        if (index < word.length - 1) {
-            inputRefs[index + 1]?.current?.focus();
+    const handleInputTap = (index) => {
+        if (musicalAlphabet.includes(word[index])) {
+            setActiveInputIndex(index);
         }
     };
 
-    const renderLetter = ({ index }) => {
-        const letter = word[index];
-        const isMusical = musicalAlphabet.includes(letter);
-        const note = randomImages[index];
+    const handleLetterSelect = (letter) => {
+        if (activeInputIndex === null) return;
 
-        return (
-            <View key={`input-${index}`} style={styles.letterStack}>
-                {isMusical && note ? (
-                    <Image source={note} style={styles.noteImage} />
-                ) : (
-                    <View style={styles.noteImagePlaceholder} />
-                )}
-                {isMusical ? (
-                    <RNPickerSelect
-                        onValueChange={(value) => handleGuess(value, index)}
-                        value={guesses[index]}
-                        useNativeAndroidPickerStyle={false}
-                        style={pickerSelectStyles}
-                        items={musicalAlphabet.map((note) => ({
-                            label: note.toUpperCase(),
-                            value: note,
-                        }))}
-                        placeholder={{ label: '—', value: '' }}
-                    />
-                ) : (
-                    <View style={styles.inputDisabled}>
-                        <Text>{letter.toUpperCase()}</Text>
+        const isCorrect = word[activeInputIndex] === letter;
+        if (!isCorrect) {
+            Alert.alert('Incorrect', 'Try again!');
+            return;
+        }
+
+        const updatedGuesses = [...guesses];
+        updatedGuesses[activeInputIndex] = letter;
+        setGuesses(updatedGuesses);
+        setActiveInputIndex(null);
+    };
+
+    const renderNoteAndInputColumns = () => (
+        <View style={styles.columnRow}>
+            {word.split('').map((letter, index) => {
+                const image = randomImages[index];
+                const isMusical = musicalAlphabet.includes(letter);
+                const isActive = activeInputIndex === index;
+                const guessed = guesses[index];
+
+                return (
+                    <View key={index} style={styles.columnWrapper}>
+                        {isMusical && image ? (
+                            <Image source={image} style={styles.noteImage} />
+                        ) : (
+                            <View style={styles.noteImagePlaceholder} />
+                        )}
+
+                        {isMusical ? (
+                            <TouchableOpacity
+                                style={[styles.displayInput, isActive && styles.activeInput]}
+                                onPress={() => handleInputTap(index)}
+                            >
+                                <Text style={styles.displayInputText}>
+                                    {guessed ? guessed.toUpperCase() : ''}
+                                </Text>
+                            </TouchableOpacity>
+                        ) : (
+                            <View style={styles.displayInput}>
+                                <Text style={styles.displayInputText}>
+                                    {letter.toUpperCase()}
+                                </Text>
+                            </View>
+                        )}
                     </View>
-                )}
+                );
+            })}
+        </View>
+    );
 
+    const renderLetterOptions = () => (
+        <View style={styles.buttonGridWrapper}>
+            <Text style={styles.pickMe}>PICK A NOTE!</Text>
+            <View style={styles.buttonGrid}>
+                {musicalAlphabet.map((letter) => (
+                    <TouchableOpacity
+                        key={letter}
+                        style={styles.letterButton}
+                        onPress={() => handleLetterSelect(letter)}
+                    >
+                        <Text style={styles.letterButtonText}>{letter.toUpperCase()}</Text>
+                    </TouchableOpacity>
+                ))}
             </View>
-        );
-    };
-
-
-    if (!word) {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.title}>Loading...</Text>
-            </View>
-        );
-    }
+        </View>
+    );
 
     return (
         <ImageBackground
@@ -170,15 +173,10 @@ export default function MusicalHangman() {
             style={styles.cardBackground}
             resizeMode="stretch"
         >
-            <ScrollView
-                contentContainerStyle={styles.scrollContainer}
-                showsVerticalScrollIndicator={false}
-                keyboardShouldPersistTaps="handled"
-            >
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
                 <View style={styles.wordWrapper}>
-                    <View style={styles.inputRow}>
-                        {guesses.map((_, index) => renderLetter({ index }))}
-                    </View>
+                    {renderNoteAndInputColumns()}
+                    {renderLetterOptions()}
                 </View>
             </ScrollView>
         </ImageBackground>
@@ -186,114 +184,96 @@ export default function MusicalHangman() {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    cardBackground: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20 * scale,
-        backgroundColor: '#f5f5f5',
-    },
-    title: {
-        fontSize: 36 * scale,
-        fontWeight: 'bold',
-        marginBottom: 30 * scale,
-    },
-    noteImage: {
-        width: 40 * scale,
-        height: 65 * scale,
-        resizeMode: 'contain',
-        marginBottom: 5 * scale,
-    },
-    noteImagePlaceholder: {
-        width: 40 * scale,
-        height: 65 * scale,
-        marginBottom: 5 * scale,
-        backgroundColor: 'transparent',
-    },
-    input: {
-        width: 35 * scale,
-        height: 20 * scale,
-        borderWidth: 2,
-        borderColor: '#000',
-        borderRadius: 6 * scale,
-        fontSize: 22 * scale,
-        textAlign: 'center',
-    },
-    letterStack: {
-        alignItems: 'center',
-        marginHorizontal: 6 * scale,
-        marginVertical: 10 * scale,
+        width: '100%',
+        height: '100%',
+        justifyContent: 'flex-start',
     },
     scrollContainer: {
         flexGrow: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        paddingVertical: 20 * scale,
+        paddingTop: Platform.OS === 'ios' ? 8 * scale : 24 * scale,
+        paddingBottom: 24 * scale,
     },
-    inputRow: {
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
+    pickMe: {
+        fontWeight: 'bold',
+        fontSize: 16 * scale,
+        color: '#32cd32',
+        marginTop: 4 * scale,
+        marginBottom: 6 * scale,
+        textAlign: 'center',
     },
     wordWrapper: {
-        flexGrow: 1,
-        justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: 20 * scale,
     },
-    cardBackground: {
-        flex: 1,
-        width: '100%',
-        height: '100%',
+    columnRow: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+        marginBottom: 2 * scale,
     },
-    cycleButton: {
-        width: 35 * scale,
-        height: 35 * scale,
-        borderWidth: 2,
+    columnWrapper: {
+        alignItems: 'center',
+        marginHorizontal: 3 * scale,
+    },
+    noteImage: {
+        width: 30 * scale,
+        height: 50 * scale,
+        resizeMode: 'contain',
+        marginBottom: 1 * scale,
+    },
+    noteImagePlaceholder: {
+        width: 30 * scale,
+        height: 50 * scale,
+        backgroundColor: 'transparent',
+        marginBottom: 1 * scale,
+    },
+    displayInput: {
+        width: 24 * scale,
+        height: 20 * scale,
+        borderWidth: 1.5,
         borderColor: '#000',
-        borderRadius: 6 * scale,
+        borderRadius: 4 * scale,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
+        marginTop: 0,
     },
-    inputDisabled: {
-        width: 40 * scale,
-        height: 35 * scale,
-        borderWidth: 2,
-        borderColor: '#ccc',
-        borderRadius: 6 * scale,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#eee',
+    activeInput: {
+        borderColor: '#00f',
+        backgroundColor: '#ddf',
     },
-    buttonText: {
-        fontSize: 20 * scale,
+    displayInputText: {
+        fontSize: 14 * scale,
         fontWeight: 'bold',
-    },
-
-});
-
-const pickerSelectStyles = StyleSheet.create({
-    inputIOS: {
-        width: 40 * scale,
-        height: 35 * scale,
-        fontSize: 20 * scale,
         textAlign: 'center',
-        borderWidth: 2,
-        borderColor: '#000',
-        borderRadius: 6 * scale,
-        paddingVertical: 5 * scale,
-        backgroundColor: 'white',
+        color: '#000',
     },
-    inputAndroid: {
-        width: 40 * scale,
-        height: 35 * scale,
-        fontSize: 20 * scale,
-        textAlign: 'center',
-        borderWidth: 2,
-        borderColor: '#000',
-        borderRadius: 6 * scale,
-        backgroundColor: 'white',
+    buttonGridWrapper: {
+        marginTop: 6 * scale,
+        alignItems: 'center',
+    },
+    buttonGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: 4 * scale,
+    },
+    letterButton: {
+        backgroundColor: '#fff',
+        borderWidth: 1.5,
+        borderColor: '#888',
+        borderRadius: 2 * scale,
+        paddingVertical: 2 * scale,
+        paddingHorizontal: 5 * scale,
+        marginHorizontal: 1 * scale,
+        marginVertical: 1 * scale,
+    },
+    letterButtonText: {
+        fontSize: 12 * scale,
+        fontWeight: 'bold',
+        color: '#000',
     },
 });
