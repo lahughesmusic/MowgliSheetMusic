@@ -14,8 +14,7 @@
     "production": {
       "distribution": "store",
       "ios": {
-        "buildConfiguration": "Release",
-        "autoIncrement": true
+        "buildConfiguration": "Release"
       }
     }
   },
