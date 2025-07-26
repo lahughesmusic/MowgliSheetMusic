@@ -21,17 +21,21 @@ const musicalAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 
 const { width, height } = Dimensions.get('window');
 
+const screenLongSide = Math.max(width, height);
+const screenShortSide = Math.min(width, height);
+
 const isIpad =
     Platform.OS === 'ios' &&
-    (Platform.isPad || (Math.min(width, height) >= 768 && Math.max(width, height) >= 1024));
+    (Platform.isPad || (screenShortSide >= 768 && screenLongSide >= 1024));
 
-const isSmallIphone = Platform.OS === 'ios' && Math.min(width, height) < 400;
+const isSmallIphone = Platform.OS === 'ios' && screenShortSide < 400;
 
+const rawScale = screenLongSide / 375;
 const scale = isIpad
-    ? (width / 375) * 1.2
+    ? Math.min(rawScale * 1.6, 3.5)
     : isSmallIphone
-        ? (width / 350) * 0.7
-        : width / 375;
+        ? Math.max(rawScale * 0.7, 0.9)
+        : Math.max(Math.min(rawScale, 3), 1);
 
 export default function MusicalHangman() {
     useFocusEffect(
