@@ -2,7 +2,7 @@
   "expo": {
     "name": "Musical Hangman & More!",
     "slug": "MusicalHangmanAndMore",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "userInterfaceStyle": "light",
     "platforms": [
       "ios",
@@ -20,7 +20,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.leamcshan.MusicalHangmanAndMore",
-      "buildNumber": "1",
+      "buildNumber": "2",
       "infoPlist": {
         "UISupportedInterfaceOrientations": [
           "UIInterfaceOrientationPortrait",
